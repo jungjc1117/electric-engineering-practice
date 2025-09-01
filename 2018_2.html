@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2018_2</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1
+id="q1-부하의-최대-수요전력을-억제할-수-있는-방법을-3가지-작성하시오.배점-6점">Q1
+부하의 최대 수요전력을 억제할 수 있는 방법을 3가지 작성하시오.[배점:
+6점]</h1>
+<p><a href="#정답">정답</a> ①</p>
+<p>②</p>
+<p>③</p>
+<hr />
+<p>해설) 서술 암기형 / 난이도 中</p>
+<p>정답</p>
+<ol type="1">
+<li>부하의 피크 컷을 제어한다.</li>
+<li>부하의 피크 시프트를 제어한다.</li>
+<li>설비부하의 프로그램을 제어한다.</li>
+</ol>
+<p>부분점수</p>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6~0점</td>
+<td>한 문항이 맞을 때마다 2점씩 획득</td>
+</tr>
+</tbody>
+</table>
+<p>해설</p>
+<p>다양한 답이 나올 수 있는 문제이다. 자가용 발전설비의 가동에 의한 피크
+제어방식을 사용하는 것도 정답이 될 수 있다.</p>
+<hr />
+<h1
+id="q2-다음-표에-있는-절연내력-시험전압을-계산하여-정답란에-작성하시오.배점-5점">Q2
+다음 표에 있는 절연내력 시험전압을 계산하여 정답란에 작성하시오.[배점:
+5점]</h1>
+<table>
+<thead>
+<tr>
+<th>공칭전압 [V]</th>
+<th>최대사용전압 [V]</th>
+<th>절연내력 시험전압 [V]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6,600</td>
+<td>6,900(비접지)</td>
+<td>①</td>
+</tr>
+<tr>
+<td>13,200</td>
+<td>13,800(중성점 다중접지)</td>
+<td>②</td>
+</tr>
+<tr>
+<td>22,900</td>
+<td>24,000(중성점 다중접지)</td>
+<td>③</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#계산과정">계산과정</a></p>
+<p>①</p>
+<p>②</p>
+<p>③</p>
+<p><a href="#정답">정답</a></p>
+<p>①</p>
+<p>②</p>
+<p>③</p>
+<hr />
+<h2 id="정답-해설">정답 해설</h2>
+<p>해설) 단순 계산형 / 난이도 下</p>
+<p><a href="#계산과정">계산과정</a></p>
+<p>$ ① 6,900 = 10,350 [V] $</p>
+<p>$ ② 13,800 = 12,696 [V] $</p>
+<p>$ ③ 24,000 = 22,080 [V] $</p>
+<p><a href="#정답">정답</a></p>
+<p>① 10,350 [V]</p>
+<p>② 12,696 [V]</p>
+<p>③ 22,080 [V]</p>
+<p>부분점수</p>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5점</td>
+<td>3문항이 모두 정답인 경우 5점 획득</td>
+</tr>
+<tr>
+<td>3점</td>
+<td>2문항이 정답인 경우 3점 획득</td>
+</tr>
+<tr>
+<td>1점</td>
+<td>1문항이 정답인 경우 1점 획득</td>
+</tr>
+</tbody>
+</table>
+<p>해설</p>
+<p>절연내력 시험전압(최대 사용전압의 배수)</p>
+<table>
+<thead>
+<tr>
+<th>접지방식</th>
+<th>최대 사용전압</th>
+<th>시험 전압 배수</th>
+<th>최저 시험전압</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비접지</td>
+<td>7[kV] 이하</td>
+<td>1.5배</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>7[kV] 초과</td>
+<td>1.25배</td>
+<td>10,500[V]</td>
+</tr>
+<tr>
+<td>중성점 비접지</td>
+<td>60[kV] 이하</td>
+<td>1.25배</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>60[kV] 초과</td>
+<td>1.25배</td>
+<td></td>
+</tr>
+<tr>
+<td>중성점 접지</td>
+<td>60[kV] 초과</td>
+<td>1.1배</td>
+<td>75,000[V]</td>
+</tr>
+<tr>
+<td>중성점 직접접지</td>
+<td>60[kV] 초과</td>
+<td>0.72배</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>170[kV] 이하</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>170[kV] 초과</td>
+<td>0.64배</td>
+<td></td>
+</tr>
+<tr>
+<td>중성점 다중접지</td>
+<td>7[kV] 초과</td>
+<td>0.92배</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>25[kV] 이하</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>※ 전로에 케이블을 사용하는 경우에는 직류로 시험할 수 있으며, 시험
+전압은 교류의 경우의 2배가 된다</p>
+<hr />
+<h1
+id="q3-조명방식-중-조명기구를-배광-기준으로-5가지로-분류하여-쓰시오.배점-5점">Q3
+조명방식 중 조명기구를 배광 기준으로 5가지로 분류하여 쓰시오.[배점
+5점]</h1>
+<p>정답:</p>
+<ol type="1">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<hr />
+<h1 id="해설-단순-암기형-난이도-中">해설) 단순 암기형 / 난이도 中</h1>
+<p>정답</p>
+<ol type="1">
+<li>직접조명</li>
+<li>반직접조명</li>
+<li>전반확산조명</li>
+<li>반간접조명</li>
+<li>간접조명</li>
+</ol>
+<p>부분점수</p>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5~0점</td>
+<td>한 문항이 맞을 때마다 1점씩 획득</td>
+</tr>
+</tbody>
+</table>
+<p>해설</p>
+<p>[조명기구의 배광에 의한 분류]</p>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr>
+<th>종류</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>직접조명</td>
+<td>빛을 직접 대상물에 비추는 방식이다.</td>
+</tr>
+<tr>
+<td>반직접 조명</td>
+<td>빛의 약 60% 정도는 아래로 향하여 직접 표면을 비추고 나머지 빛은 천정
+면을 향하여 반사시키는 방식이다.</td>
+</tr>
+<tr>
+<td>전반확산 조명</td>
+<td>하향광속으로 직접 작업 면에 직사시키고 상향광속의 반사광으로
+작업면의 조도를 증가시키는 방식이다.</td>
+</tr>
+<tr>
+<td>반간접 조명</td>
+<td>직접조명과 간접조명의 단점을 보완한 것으로 발산광속 중 상향 광속이
+약 60~90[%], 하향 광속이 약 10~40[%]로 조정한 조명방식이다.</td>
+</tr>
+<tr>
+<td>간접 조명</td>
+<td>상향광속이 90~100[%]가 되고 하향광속은 10[%] 정도로 대부분의
+발산광속을 윗 방향으로 확산시키는 방식이다.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1
+id="q4-다음은-상용전원과-예비전원을-운전할-경우에-유의하여야-할-사항이다.-안에-들어갈-내용을-정답란에-기입하시오.-배점-4점">Q4
+다음은 상용전원과 예비전원을 운전할 경우에 유의하여야 할 사항이다. (
+)안에 들어갈 내용을 정답란에 기입하시오. [배점: 4점]</h1>
+<p>상용전원과 예비전원 사이에는 병렬운전을 하지 않아야 하므로 수전용
+차단기와 발전용 차단기 사이에는 전기적 또는 기계적 (①)을 시설해야 하며
+(②)를 사용해야 한다.</p>
+<p><a href="#정답">정답</a> 1 2</p>
+<hr />
+<h1 id="해설-단순-암기형-난이도-下">해설) 단순 암기형 / 난이도 下</h1>
+<h2 id="정답">정답</h2>
+<ol type="1">
+<li>인터록</li>
+<li>자동전환 개폐기</li>
+</ol>
+<h2 id="부분점수">부분점수</h2>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4점</td>
+<td>두 문항이 모두 정답인 경우 4점 획득</td>
+</tr>
+<tr>
+<td>2점</td>
+<td>두 문항 중 한 문항이 정답인 경우 2점 획득</td>
+</tr>
+</tbody>
+</table>
+<h2 id="해설">해설</h2>
+<p>[비상용 예비전원의 시설(KEC 244.2.1)]</p>
+<p>상용전원의 정전으로 비상용전원이 대체되는 경우에는 상용전원과
+병렬운전이 되지 않도록 다음 중 하나 또는 그 이상의 조합으로 격리조치를
+하여야 한다.</p>
+<ol type="1">
+<li>조작기구 또는 절환 개폐장치의 제어회로 사이의 전기적, 기계적 또는
+전기기계적 연동</li>
+<li>단일 이동식 열쇠를 갖춘 잠금 계통</li>
+<li>차단-중립-투입의 3단계 절환 개폐장치</li>
+<li>적절한 연동 기능을 갖춘 자동 절환 개폐장치</li>
+<li>동등한 동작을 보장하는 기타 수단</li>
+</ol>
+<hr />
+<h1
+id="q5.-변압기-중성점-접지계통접지의-목적을-3가지-작성하시오.-배점-5점">Q5.
+변압기 중성점 접지(계통접지)의 목적을 3가지 작성하시오. [배점: 5점]</h1>
+<p><a href="#정답">정답</a></p>
+<p>①</p>
+<p>②</p>
+<p>③</p>
+<hr />
+<h1 id="정답-해설-1">정답 해설</h1>
+<p>해설) 서술 암기형 / 난이도 중</p>
+<p>① 전로의 보호장치의 확실한 동작을 확보한다.</p>
+<p>② 이상전압을 억제한다.</p>
+<p>③ 대지전압을 저하시킨다.</p>
+<h2 id="부분-점수">부분 점수</h2>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5점</td>
+<td>3문항이 모두 정답인 경우 5점 획득</td>
+</tr>
+<tr>
+<td>3점</td>
+<td>2문항이 정답인 경우 3점 획득</td>
+</tr>
+<tr>
+<td>2점</td>
+<td>1문항이 정답인 경우 2점 획득</td>
+</tr>
+</tbody>
+</table>
+<h2 id="해설-1">해설</h2>
+<p>[한국전기설비규정 322.5] 전로의 중성점의 접지</p>
+<ol type="1">
+<li><p>전로의 보호장치의 확실한 동작의 확보, 이상전압의 억제 및 대지
+전압의 저하를 위하여 특히 필요한 경우에 전로의 중성점에 접지공사를 할
+경우 접지도체는 공칭단면적 16 $ [mm^2] $이상의 연동선으로서 고장 시
+흐르는 전류가 안전하게 통할 수 있는 것을 사용하고 또한 손상을 받을
+우려가 없도록 시설할 것 $$</p></li>
+<li><p>저압전로에 시설하는 보호장치의 확실한 동작을 확보하기 위하여 특히
+필요한 경우에 전로의 중성점에 접지공사를 할 경우 접지도체는 공칭단면적 6
+$ [mm^2]$ 이상의 연동선으로서 고장 시 흐르는 전류가 안전하게 통할 수
+있는 것을 사용하여야 한다.</p></li>
+<li><p>변압기의 안정권선이나 유휴권선 또는 접지공사를 할 때에는 규정에
+의하여 접지공사를 하여야 한다. 특히, 필요할 경우에 그 권선에 접지공사를
+할 때에는 규정에 의하여 접지공사를 하여야 한다.</p>
+<p>① 선로의 보호 장치의 확실한 동작의 확보: 지락고장 시 접지계전기의
+확실한 동작</p>
+<p>② 이상전압의 억제: 뇌, 아크 지락, 기타에 의한 이상전압의 경감 및 발생
+억제</p>
+<p>③ 대지전압의 저하: 지락고장 시 건전상의 대지 전위상승을 억제, 전선로
+및 기기의 절연레벨을 경감</p></li>
+</ol>
+<hr />
+<h1
+id="q6-다음과-같은-plc-프로그램을-보고-다음의-물음에-답하시오.배점-6점">Q6
+다음과 같은 PLC 프로그램을 보고 다음의 물음에 답하시오.[배점: 6점]</h1>
+<p>① S: 입력 a 접점 (신호)</p>
+<p>② SN : 입력 b 접점 (신호)</p>
+<p>③ A: AND a 접점</p>
+<p>④ AN: AND b 접점</p>
+<p>⑤ O: OR a 접점</p>
+<p>⑥ ON: OR b 접점</p>
+<p>⑦ W: 출력</p>
+<table>
+<thead>
+<tr>
+<th>스텝</th>
+<th>명령어</th>
+<th>번지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>S</td>
+<td>P000</td>
+</tr>
+<tr>
+<td>1</td>
+<td>AN</td>
+<td>M000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ON</td>
+<td>M001</td>
+</tr>
+<tr>
+<td>3</td>
+<td>W</td>
+<td>P011</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>위의 조건을 기준으로 PLC 래더 다이어그램을 작성하시오. <a
+href="#정답">정답</a></p></li>
+<li><p>위의 조건을 기준으로 출력의 논리식을 작성하시오. <a
+href="#정답">정답</a></p></li>
+</ol>
+<hr />
+<p>해설) 도면완성+논리회로 / 난이도 中</p>
+<p>정답</p>
+<figure>
+<img src="./2018_2/12_1.png" alt="그림" />
+<figcaption aria-hidden="true">그림</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>$P<em>{011} = P</em>{000} $</li>
+</ol>
+<p>부분점수</p>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6점</td>
+<td>(1), (2)번이 모두 맞은 경우 6점 획득</td>
+</tr>
+<tr>
+<td>3점</td>
+<td>(1), (2)번 중 하나만 맞은 경우 3점 획득</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1
+id="q7-다음에-제시된-도면은-3상-농형-유도전동기-im의-y--기동-운전-제어의-미완성-회로도이다.-다음-물음에-답하시오.-배점-8점">Q7
+다음에 제시된 도면은 3상 농형 유도전동기 IM의 Y-△ 기동 운전 제어의
+미완성 회로도이다. 다음 물음에 답하시오. [배점: 8점]</h1>
+<figure>
+<img src="./2018_2/13_1.png" alt="그림" />
+<figcaption aria-hidden="true">그림</figcaption>
+</figure>
+<ol type="1">
+<li>①~③에 해당되는 전자접촉기 접점의 약호를 쓰시오.</li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<p>①<br />
+②<br />
+③</p>
+<ol start="2" type="1">
+<li>전자접촉기 MCS는 운전 중에는 어떤 상태로 있는지 쓰시오.</li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<ol start="3" type="1">
+<li>미완성 회로도의 주회로 부분에 Y-△기동 운전 결선도를 작성하시오.</li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<hr />
+<h2 id="해설-시퀀스-동작-도면완성-난이도-상">해설) 시퀀스 동작 +
+도면완성 / 난이도 상</h2>
+<p>정답</p>
+<ol type="1">
+<li><p>① MCM, ② MCD, ③ MCS</p></li>
+<li><p>복구(무여자) 상태로 있다.</p></li>
+<li><p>결선도 완성</p></li>
+</ol>
+<figure>
+<img src="./2018_2/14_1.png" alt="그림" />
+<figcaption aria-hidden="true">그림</figcaption>
+</figure>
+<p>부분점수</p>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8점</td>
+<td>(1), (2), (3)번이 모두 맞은 경우 8점 획득</td>
+</tr>
+<tr>
+<td>4점</td>
+<td>(3)번이 맞은 경우 4점 획득</td>
+</tr>
+<tr>
+<td>4점</td>
+<td>(1), (2)번은 한 문항이 맞을 때마다 2점씩 획득</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1
+id="q8-다음과-같은-인텔리전트-빌딩intelligent-building의-전산시스템을-유지하기-위하여-비상전원으로-사용되고-있는-ups에-대한-물음에-답하시오.배점-6점">Q8
+다음과 같은 인텔리전트 빌딩(Intelligent building)의 전산시스템을
+유지하기 위하여 비상전원으로 사용되고 있는 UPS에 대한 물음에
+답하시오.[배점: 6점]</h1>
+<p>인텔리전트 빌딩(Intelligent building)은 빌딩 자동화시스템,
+사무자동화시스템, 정보통신시스템, 건축환경을 총 망라한 건설과 유지관리의
+경제성을 추구하는 빌딩이다.</p>
+<ol type="1">
+<li>UPS를 우리말로 쓰시오.</li>
+</ol>
+<p><a href="#정답">정답</a> 무정전 전원 장치</p>
+<ol start="2" type="1">
+<li>UPS에서 AC→DC부와 DC→AC부로 변환하는 부분의 명칭을 각각 무엇이라고
+하는지 쓰시오.</li>
+</ol>
+<p><a href="#정답">정답</a> ① AC→DC 변환부: 정류기 ② DC→AC 변환부:
+인버터</p>
+<ol start="3" type="1">
+<li>UPS가 동작되면 전력공급을 위한 축전지가 필요하다. 이때의 축전지
+용량을 구하는 공식을 쓰시오. (단, 기호를 사용할 경우, 기호에 대한 의미도
+함께 작성하시오.)</li>
+</ol>
+<p><a href="#정답">정답</a> 질문의 맥락으로 보아, 축전지 용량을 구하는
+공식은 특정한 하나의 공식으로 한정할 수 없으며, 문제 상황에 따라 다양한
+공식이 적용될 수 있습니다. 예를 들어, 부하의 전력 소모량과 백업 시간을
+고려하여 축전지 용량을 계산할 수 있습니다. 다만, 질문에서 공식과 기호에
+대한 설명을 요구했으므로, 아래와 같이 표현할 수 있습니다.</p>
+<p><span class="math display">\[ 용량 (Ah) = \frac{부하전력 (W) \times
+백업시간 (h)}{방전종료전압 (V)} \]</span></p>
+<p>여기서,</p>
+<ul>
+<li>Ah: 축전지 용량 (암페어아워)</li>
+<li>W: 부하의 전력 소모량 (와트)</li>
+<li>h: 필요한 백업 시간 (시간)</li>
+<li>V: 방전 종료 전압 (볼트)</li>
+</ul>
+<hr />
+<h1 id="해설-단답-암기형단순-계산형-난이도-中">해설) 단답 암기형+단순
+계산형 / 난이도 中</h1>
+<p>정답</p>
+<ol type="1">
+<li><p>무정전 전원 공급 장치</p></li>
+<li><p>① AC → DC 변환부: 컨버터 ② DC → AC 변환부: 인버터</p></li>
+<li><p>$C = KI [Ah] $</p></li>
+</ol>
+<ul>
+<li>C: 축전기의 용량 [Ah]</li>
+<li>L: 보수율</li>
+<li>K: 용량환산 시간계수</li>
+<li>I: 방전 전류 [A]</li>
+</ul>
+<p>부분점수</p>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6~0점</td>
+<td>(1), (2), (3)번 중 한 문항이 맞을 때마다 2점씩 획득</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="q9-다음에-제시된-논리식을-간단히-하시오.-배점-4점">Q9 다음에
+제시된 논리식을 간단히 하시오. [배점: 4점]</h1>
+<ol type="1">
+<li>$Z = (A + B + C)A $</li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<ol start="2" type="1">
+<li>$Z = C + BC + AB + C $</li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<hr />
+<h1 id="정답-해설-2">정답 해설</h1>
+<p>해설) 단순 계산형+논리회로 / 난이도 下</p>
+<ol type="1">
+<li>논리식 간소화</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p>$ Z = (A+B+C)A = AA + AB + AC = A + AB + AC = A(1+B+C) $</p>
+<p>$ = A = A $</p>
+<p><a href="#정답">정답</a> $Z = A $</p>
+<ol start="2" type="1">
+<li>논리식 간소화</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p>$ Z = C + BC + AB + C = AB + C( + B + ) = AB + C $</p>
+<p><a href="#정답">정답</a> $Z = AB + C $</p>
+<p>부분점수</p>
+<table>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 94%" />
+</colgroup>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4점</td>
+<td>(1), (2) 문항이 모두 맞은 경우 4점 획득</td>
+</tr>
+<tr>
+<td>2점</td>
+<td>(1), (2) 문항에 대한 계산과정과 정답이 모두 맞았을 때 1문항당 2점
+획득</td>
+</tr>
+</tbody>
+</table>
+<p>접근 POINT</p>
+<p>논리식을 최소화하는 문제로 수식을 직접 이용하는 문제와 카르노맵을
+이용하는 문제가 있다.</p>
+<p>공식 CHECK</p>
+<p><span class="math display">\[ A + 0 = A, A + 1 = 1, A + \overline{A}
+= 1, A \cdot 0 = 0 \]</span></p>
+<p><span class="math display">\[ A \cdot 1 = A, A \cdot A = A, A \cdot
+\overline{A} = 0 \]</span></p>
+<p><span class="math display">\[ A \cdot (B + C) = AB + AC \]</span></p>
+<p><span class="math display">\[ \overline{A} + B = \overline{A} \cdot
+\overline{B}, \overline{A} \cdot \overline{B} = \overline{A+B}
+\]</span></p>
+<p><span class="math display">\[ \overline{\overline{A}} = A
+\]</span></p>
+<p>해설</p>
+<p><span class="math display">\[ **(1)** 논리식을 전개 후 논리식의
+기본공식 AA = A임을 이용하고, 다시 공통인 A로 묶으면 1 + A = 1임을
+이용하면 된다. \]</span></p>
+<p><span class="math display">\[ **(2)** 논리식을 가장 많은 항이 공통인
+C로 묶은 후 논리식의 기본공식 A + \overline{A} = 1임을 이용하면 된다.
+\]</span></p>
+<hr />
+<h1
+id="q10-불평형-3상-전압이-v_a-7.3-angle-12.5circ-v-v_b-0.4-angle--100circ-v-v_c-4.4-angle-154circ-v일-때-영상분-정상분-역상분을-계산하시오.-배점-6점">Q10
+불평형 3상 전압이 <span class="math inline">\(V_a = 7.3 \angle
+12.5^\circ [V], V_b = 0.4 \angle -100^\circ [V], V_c = 4.4 \angle
+154^\circ [V]\)</span>일 때 영상분, 정상분, 역상분을 계산하시오. [배점:
+6점]</h1>
+<ol type="1">
+<li>영상분 전압(<span class="math inline">\(V_0\)</span>[V])을
+계산하시오. <a href="#계산과정">계산과정</a></li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<ol start="2" type="1">
+<li>정상분 전압(<span class="math inline">\(V_1\)</span>[V])을
+계산하시오. <a href="#계산과정">계산과정</a></li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<ol start="3" type="1">
+<li>역상분 전압(<span class="math inline">\(V_2\)</span>[V])을
+계산하시오. <a href="#계산과정">계산과정</a></li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<hr />
+<h2 id="해설-복합-계산형-난이도-上">해설) 복합 계산형 / 난이도 上</h2>
+<p>정답</p>
+<ol type="1">
+<li>영상분 전압</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ V_0 = \frac{1}{3}(V_a + V_b + V_c)
+\]</span></p>
+<p><span class="math display">\[ = \frac{1}{3} \times (7.3\angle
+12.5^\circ + 0.4\angle -100^\circ + 4.4\angle 154^\circ) \]</span></p>
+<p><span class="math display">\[ = 1.03 + j1.04 [V] = 1.46\angle
+45.28^\circ [V] \]</span></p>
+<p><a href="#정답">정답</a> $1.46^$</p>
+<ol start="2" type="1">
+<li>정상분 전압</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ V_1 = \frac{1}{3}(V_a + aV_b + a^2V_c)
+\]</span></p>
+<p><span class="math display">\[ = \frac{1}{3} \times (7.3\angle
+12.5^\circ + 1\angle 120^\circ \times 0.4\angle -100^\circ + 1\angle
+240^\circ \times 4.4\angle 154^\circ) \]</span></p>
+<p><span class="math display">\[ = 3.72 + j1.39 [V] = 3.97\angle
+20.49^\circ [V] \]</span></p>
+<p><a href="#정답">정답</a> $3.97^$</p>
+<ol start="3" type="1">
+<li>역상분 전압</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ V_2 = \frac{1}{3}(V_a + a^2V_b + aV_c)
+\]</span></p>
+<p><span class="math display">\[ = \frac{1}{3} \times (7.3\angle
+12.5^\circ + 1\angle 240^\circ \times 0.4\angle -100^\circ + 1\angle
+120^\circ \times 4.4\angle 154^\circ) \]</span></p>
+<p><span class="math display">\[ = 2.38 - j0.85 [V] = 2.53\angle
+-19.65^\circ [V] \]</span></p>
+<p><a href="#정답">정답</a> $2.53^$</p>
+<p>부분점수</p>
+<table>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 95%" />
+</colgroup>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6~0점</td>
+<td>소문항 1개당 2점씩 부분 점수 부여. 각 소문항은 계산과정과 답이 모두
+맞아야 2점 획득, 오류가 있으면 0점 처리</td>
+</tr>
+</tbody>
+</table>
+<p>접근 POINT</p>
+<p>필기 유형이지만 최근 5년간 2회 출제되었으므로 대칭분의 공식을 정확히
+암기하고, 대칭분의 의미도 이해해야 한다.</p>
+<p>해설</p>
+<p><span class="math display">\[ 상전압(V_a, V_b, V_c)과 영상전압(V_0),
+정상전압(V_1), 역상전압(V_2)의 관계 행렬 \]</span></p>
+<p><span class="math display">\[ \begin{pmatrix} V_a \\ V_b \\ V_c
+\end{pmatrix} = \begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; a &amp; a^2
+\\ 1 &amp; a^2 &amp; a \end{pmatrix} \begin{pmatrix} V_0 \\ V_1 \\ V_2
+\end{pmatrix}, \begin{pmatrix} V_0 \\ V_1 \\ V_2 \end{pmatrix} =
+\frac{1}{3}\begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; a^2 &amp; a \\ 1
+&amp; a &amp; a^2 \end{pmatrix} \begin{pmatrix} V_a \\ V_b \\ V_c
+\end{pmatrix} \]</span></p>
+<p><span class="math display">\[ 여기서, 1 + a + a^2 = 0, a^3 = 1,
+\]</span></p>
+<p><span class="math display">\[ a = 1\angle 120^\circ = -\frac{1}{2} +
+j\frac{\sqrt{3}}{2}, a^2 = 1\angle 240^\circ = -\frac{1}{2} -
+j\frac{\sqrt{3}}{2} \]</span></p>
+<hr />
+<h1
+id="q11-어느-건물의-부하는-하루에-240-kw로-5시간-100-kw로-8시간-75-kw로-나머지-시간을-사용하고-이에-따른-수전설비를-450-kva로-하였다.-다음-물음에-답하시오.-단-부하의-평균역률은-0.8이다.-배점-6점">Q11
+어느 건물의 부하는 하루에 240 [kW]로 5시간, 100 [kW]로 8시간, 75 [kW]로
+나머지 시간을 사용하고, 이에 따른 수전설비를 450 [kVA]로 하였다. 다음
+물음에 답하시오. (단, 부하의 평균역률은 0.8이다.) [배점: 6점]</h1>
+<ol type="1">
+<li>이 건물의 수용률 [%]을 계산하시오.</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p>하루 총 시간: 24시간</p>
+<p>240 kW 사용 시간: 5시간 100 kW 사용 시간: 8시간 <span
+class="math display">\[ 75 kW 사용 시간: 24 - 5 - 8 = 11시간
+\]</span></p>
+<p>총 부하량 = (240 kW × 5시간) + (100 kW × 8시간) + (75 kW × 11시간) =
+1200 kWh + 800 kWh + 825 kWh = 2825 kWh</p>
+<p>평균 부하 = 총 부하량 / 총 시간 = 2825 kWh / 24시간 = 117.71 kW</p>
+<p>수용률 = (평균 부하 / 수전설비 용량) × 100% = (117.71 kW / 450 kVA ×
+0.8) × 100% ≈ 32.7%</p>
+<p><a href="#정답">정답</a> 약 32.7%</p>
+<ol start="2" type="1">
+<li>이 건물의 일부하율 [%]을 계산하시오.</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p>최대 부하 = 240 kW</p>
+<p>일부하율 = (평균 부하 / 최대 부하) × 100% = (117.71 kW / 240 kW) ×
+100% ≈ 49.0%</p>
+<p><a href="#정답">정답</a> 약 49.0%</p>
+<hr />
+<h1 id="정답-해설-3">정답 해설</h1>
+<p>(해설) 복합 계산형 / 난이도 中</p>
+<ol type="1">
+<li>건물의 수용률 [%] 계산</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ 수용률 = \frac{\text{최대 수용
+전력}}{\text{설비 용량}} \times 100 = \frac{240}{450 \times 0.8} \times
+100 = 66.67 [%] \]</span></p>
+<p><a href="#정답">정답</a> 66.67 [%]</p>
+<ol start="2" type="1">
+<li>건물의 일부하율 [%] 계산</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ 부하율 = \frac{\text{평균
+전력}}{\text{최대 수용 전력}} \times 100 = \frac{240 \times 5 + 100
+\times 8 + 75 \times 11}{240 \times 24} \times 100 = 49.05 [%]
+\]</span></p>
+<p><a href="#정답">정답</a> 49.05 [%]</p>
+<p>부분 점수</p>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6점</td>
+<td>(1), (2)번이 모두 정답인 경우 6점 획득</td>
+</tr>
+<tr>
+<td>3점</td>
+<td>(1), (2)번 중 한 문항이 정답인 경우 3점 획득</td>
+</tr>
+</tbody>
+</table>
+<p>해설</p>
+<p>[수용률 (Demand Factor)]</p>
+<p>수용설비가 동시에 사용되는 정도를 나타내며 주상 변압기 등의 적정 공급
+설비 용량을 파악하기 위하여 사용한다.</p>
+<p><span class="math display">\[ 수용률 = \frac{\text{최대 수요 전력
+[kW]}}{\text{부하 설비 합계 [kW]}} \times 100 [%] \]</span></p>
+<p>[부하율]</p>
+<p>공급설비가 어느 정도 유효하게 사용되는가를 나타내며 부하율이 클수록
+공급 설비가 유효하게 사용된다.</p>
+<p><span class="math display">\[ 부하율 = \frac{\text{평균 수요 전력
+[kW]}}{\text{최대 수요 전력 [kW]}} \times 100 [%] \]</span></p>
+<hr />
+<h1
+id="q12-50mm²-0.3195-ωkm-전장-3.6km인-3심-전력-케이블의-어떤-중간지점에서-1선-지락사고가-발생하여-전기적-사고점-탐지법의-하나인-머레이-루프법으로-측정하였다.-그-결과-다음과-같은-상태에서-평형이-되었을-때-측정점에서-사고지점까지의-거리를-계산하시오.-배점-5점">Q12
+50[mm²] (0.3195 [Ω/km]), 전장 3.6[km]인 3심 전력 케이블의 어떤
+중간지점에서 1선 지락사고가 발생하여 전기적 사고점 탐지법의 하나인
+머레이 루프법으로 측정하였다. 그 결과 다음과 같은 상태에서 평형이 되었을
+때 측정점에서 사고지점까지의 거리를 계산하시오. [배점: 5점]</h1>
+<figure>
+<img src="./2018_2/23_1.png" alt="그림" />
+<figcaption aria-hidden="true">그림</figcaption>
+</figure>
+<h2 id="계산과정">계산과정</h2>
+<h2 id="정답-1">정답</h2>
+<p>(계산과정을 통해 구해야 하는 값입니다.)</p>
+<hr />
+<p>해설) 단순 계산형 / 난이도 중</p>
+<p>정답 <a href="#계산과정">계산과정</a> <span class="math display">\[
+20 \times (2L - x) = 100 \times x \]</span> <span
+class="math display">\[ x = \frac{40L}{120} = \frac{40 \times 3.6}{120}
+= 1.2 [km] \]</span></p>
+<p><a href="#정답">정답</a> 1.2[km]</p>
+<p>부분점수</p>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5점</td>
+<td>계산과정과 정답이 모두 맞은 경우 5점 획득</td>
+</tr>
+<tr>
+<td>0점</td>
+<td>계산과정이나 정답에 오류가 있는 경우 0점</td>
+</tr>
+</tbody>
+</table>
+<p>해설 휘스톤 브리지 등가회로를 이용한다. <span class="math display">\[
+저항 R = \rho \frac{L}{A} [\Omega] 에서 전선의 단면적이 동일하다면 R
+\propto L(길이)로 가정하고 계산할 수 있다. \]</span></p>
+<hr />
+<h1
+id="q13-200kva인-단상변압기-2대를-v결선하여-부하를-걸었다.-이-때-계약-수전설비에-의한-계약-최대전력을-계산하시오.-단-계산-값은-소수-첫째-자리에서-반올림한다.-배점-4점">Q13
+200[kVA]인 단상변압기 2대를 V결선하여 부하를 걸었다. 이 때 계약
+수전설비에 의한 계약 최대전력을 계산하시오. (단, 계산 값은 소수 첫째
+자리에서 반올림한다.) [배점: 4점]</h1>
+<p><a href="#계산과정">계산과정</a></p>
+<p><a href="#정답">정답</a></p>
+<hr />
+<h1 id="해설-단순-계산형-난이도-下">해설) 단순 계산형 / 난이도 下</h1>
+<h2 id="정답-2">정답</h2>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ P = (200 + 200) \times 0.866 = 346.4 \,
+[kVA] \]</span></p>
+<p><a href="#정답">정답</a> 346 [kVA]</p>
+<h2 id="부분점수-1">부분점수</h2>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4점</td>
+<td>계산과정과 정답에 오류가 없는 경우 4점</td>
+</tr>
+<tr>
+<td>0점</td>
+<td>계산과정과 정답에 오류가 있는 경우 0점</td>
+</tr>
+</tbody>
+</table>
+<h2 id="해설-2">해설</h2>
+<p>계약 수전설비에 의한 계약 최대전력의 결정은 계약 수전설비(변압기)
+표시용량의 합계로 한다. 다만, 3상공급을 위하여 단상변압기를 결합하여
+사용한 경우의 계약 최대전력은 다음과 같이 결정한다.</p>
+<ol type="1">
+<li>△ 또는 Y결선의 경우: 결선된 단상변압기 용량의 합계</li>
+<li>동일 용량의 변압기를 V결선한 경우: 결선된 단상변압기 용량 합계의
+86.6[%]</li>
+<li>서로 다른 용량의 변압기를 V결선한 경우</li>
+</ol>
+<p><span class="math display">\[ 계약 최대 전력 = (A - B) + (B \times 2
+\times 0.866) \]</span></p>
+<p>큰 용량의 변압기(A), 작은 용량의 변압기(B)</p>
+<hr />
+<h1
+id="q14-다음과-같이-전열기-와-전동기-이-간선에-접속되어-있을-때-간선의-허용전류-i_l을-몇-a인지-계산하시오.-단-전동기의-역률은-모두-80이다.-배점-4점">Q14
+다음과 같이 전열기 ⊕와 전동기 ⓜ이 간선에 접속되어 있을 때 간선의
+허용전류 <span class="math inline">\(I_L\)</span>을 몇 [A]인지
+계산하시오. (단, 전동기의 역률은 모두 80[%]이다.) [배점: 4점]</h1>
+<p><a href="#계산과정">계산과정</a></p>
+<p><a href="#정답">정답</a></p>
+<p><br></p>
+<figure>
+<img src="./2018_2/27_1.png" alt="그림" />
+<figcaption aria-hidden="true">그림</figcaption>
+</figure>
+<hr />
+<h1 id="해설-복합-계산형-난이도-中">해설) 복합 계산형 / 난이도 中</h1>
+<h2 id="정답-3">정답</h2>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ I_H = 50[A] \]</span></p>
+<p><span class="math display">\[ I_M = 15 + 18 + 17 = 50[A]
+\]</span></p>
+<p><span class="math display">\[ I_B = I_H + I_M = 50 + 50 = 100[A]
+\]</span></p>
+<p><span class="math display">\[ I_B \le I_z \le I_2 의 조건을 만족해야
+한다. \]</span></p>
+<p>간선의 최소 허용전류는 100[A]가 되어야 한다.</p>
+<p><a href="#정답">정답</a> 100[A]</p>
+<h2 id="부분점수-2">부분점수</h2>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4점</td>
+<td>계산과정이나 정답에 오류가 없는 경우 4점 획득</td>
+</tr>
+<tr>
+<td>0점</td>
+<td>계산과정이나 정답에 오류가 있는 경우 0점</td>
+</tr>
+</tbody>
+</table>
+<h2 id="해설-3">해설</h2>
+<p>[한국전기설비규정 212.4] 과부하전류에 대한 보호</p>
+<p>과부하에 대해 케이블(전선)을 보호하는 장치의 동작 특성은 다음의
+조건을 충족해야 한다.</p>
+<p><span class="math display">\[ I_B \le I_z \le I_2 \le 1.45 \times I_z
+\]</span></p>
+<p><span class="math display">\[ _ I_B: 회로의 설계전류(선도체를 흐르는
+설계전류 또는 함유율이 높은 영상분 고조파, 특히 제3고조파가 지속적으로
+흐르는 경우 중성선에 흐르는 전류이다.) \]</span> <span
+class="math display">\[ _ I*z: 케이블의 허용전류 \]</span> <span
+class="math display">\[ * I: 보호장치의 정격전류(사용현장에 적합하게
+조정된 전류의 설정 값) \]</span> <span class="math display">\[ \_ I_2:
+보호장치가 규약시간 이내에 유효하게 동작하는 것을 보장하는 전류
+\]</span></p>
+<hr />
+<h1
+id="q15-그림과-같은-송전계통-s점에서-3상-단락사고가-발생하였다.-주어진-도면과-조건을-참고하여-다음-각-물음에-답하시오.-배점-14점">Q15
+그림과 같은 송전계통 S점에서 3상 단락사고가 발생하였다. 주어진 도면과
+조건을 참고하여 다음 각 물음에 답하시오. [배점: 14점]</h1>
+<figure>
+<img src="./2018_2/29_1.png" alt="그림" />
+<figcaption aria-hidden="true">그림</figcaption>
+</figure>
+<p>[조건]</p>
+<table>
+<colgroup>
+<col style="width: 1%" />
+<col style="width: 4%" />
+<col style="width: 25%" />
+<col style="width: 19%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr>
+<th>번호</th>
+<th>기기명</th>
+<th>용량</th>
+<th>전압</th>
+<th>%X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>발전기(G)</td>
+<td>50,000[kVA]</td>
+<td>11[kV]</td>
+<td>25</td>
+</tr>
+<tr>
+<td>2</td>
+<td>변압기(T₁)</td>
+<td>50,000[kVA]</td>
+<td>11/154[kV]</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>송전선</td>
+<td></td>
+<td>154[kV]</td>
+<td>8 (10,000[kVA] 기준)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>변압기(T₂)</td>
+<td>1차 25,000[kVA]<br>2차 30,000[kVA]<br>3차 10,000[kVA]</td>
+<td>1차 154[kV]<br>2차 77[kV]<br>3차 11[kV]</td>
+<td>12 (25,000[kVA] 기준, 1차~2차)<br>16 (25,000[kVA] 기준,
+2차~3차)<br>9.5 (10,000[kVA] 기준, 3차~1차)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>조상기(C)</td>
+<td>10,000[kVA]</td>
+<td>11[kV]</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li>변압기(T₂)의 각각의 %리액턴스를 기준용량 10[MVA]로 환산하시오.</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><a href="#정답">정답</a></p>
+<ol start="2" type="1">
+<li>변압기(T₂)의 1차(P), 2차(T), 3차(S)의 %리액턴스를 계산하시오.</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><a href="#정답">정답</a></p>
+<ol start="3" type="1">
+<li>발전기에서 고장점까지 10[MVA] 기준, 합성 %리액턴스를
+계산하시오.</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><a href="#정답">정답</a></p>
+<ol start="4" type="1">
+<li>고장점에서 단락용량은 몇 [MVA]인지 계산하시오.</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><a href="#정답">정답</a></p>
+<ol start="5" type="1">
+<li>고장점의 단락전류는 몇 [A]인지 계산하시오.</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><a href="#정답">정답</a></p>
+<hr />
+<h1 id="해설-복합-계산형-난이도-上-1">해설) 복합 계산형 / 난이도 上</h1>
+<h2 id="정답-4">정답</h2>
+<ol type="1">
+<li>변압기(T₂)의 각각의 %리액턴스를 기준용량 10[MVA]로 환산</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<ul>
+<li>1차~2차: $%X_{p-r} = = 4.8 % $</li>
+<li>2차~3차: $%X_{T-S} = = 6.4 % $</li>
+<li>3차~1차: $%X_{S-p} = = 9.5 % $</li>
+</ul>
+<p><a href="#정답">정답</a></p>
+<ul>
+<li>1차~2차: <span class="math inline">\(\%X_{p-r} = 4.8
+\%\)</span></li>
+<li>2차~3차: <span class="math inline">\(\%X_{T-S} = 6.4
+\%\)</span></li>
+<li>3차~1차: <span class="math inline">\(\%X_{S-p} = 9.5
+\%\)</span></li>
+</ul>
+<ol start="2" type="1">
+<li>변압기(T₂)의 1차(P), 2차(T), 3차(S)의 %리액턴스 계산</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<ul>
+<li>1차: <span class="math inline">\(\%X_P = \frac{4.8 + 9.5 - 6.4}{2} =
+3.95 \%\)</span></li>
+<li>2차: <span class="math inline">\(\%X_T = \frac{6.4 + 4.8 - 9.5}{2} =
+0.85 \%\)</span></li>
+<li>3차: <span class="math inline">\(\%X_S = \frac{6.4 + 9.5 - 4.8}{2} =
+5.55 \%\)</span></li>
+</ul>
+<p><a href="#정답">정답</a></p>
+<p><span class="math display">\[ \%X_P = 3.95 \ [%], \ \%X_T = 0.85 \
+[%], \ \%X_S = 5.55 \ [%] \]</span></p>
+<ol start="3" type="1">
+<li>발전기에서 고장점까지 10[MVA] 기준, 합성 %리액턴스 계산</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p>① 기준용량 10[MVA] %리액턴스 환산</p>
+<ul>
+<li>발전기: $%X_G = = 5 % $</li>
+<li>변압기(T₁): $%X_T = = 2 % $</li>
+<li>송전선: $%X_L = = 8 % $</li>
+<li>변압기(T₁): $%X_T = = 2 % $</li>
+<li>송전선: $%X_L = = 8 % $</li>
+<li>조상기: $%X_C = = 15 % $</li>
+</ul>
+<p>② 합성 %리액턴스</p>
+<ul>
+<li>발전기~변압기 1차: $%X_1 = 5 + 2 + 8 + 3.95 = 18.95 % $</li>
+<li>조상기~변압기 3차: $%X_3 = 15 + 5.55 = 20.55 % $</li>
+<li>합성 $%X = + 0.85 = 10.71 % $</li>
+</ul>
+<p><a href="#정답">정답</a> 10.71 [%]</p>
+<ol start="4" type="1">
+<li>고장점에서 단락용량 [MVA] 계산</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ P_S = \frac{100}{\%X} P =
+\frac{100}{10.71} \times 10 = 93.37 \ [MVA] \]</span></p>
+<p><a href="#정답">정답</a> 93.37 [MVA]</p>
+<ol start="5" type="1">
+<li>고장점의 단락전류 [A] 계산</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ I_S = \frac{100}{\%X} I_N =
+\frac{100}{10.71} \times \frac{10 \times 10^6}{\sqrt{3} \times 77 \times
+10^3} = 700.1 \ [A] \]</span></p>
+<p><a href="#정답">정답</a> 700.1 [A]</p>
+<h2 id="부분점수-3">부분점수</h2>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14점</td>
+<td>(1)~(5)가 모두 맞은 경우 14점 획득</td>
+</tr>
+<tr>
+<td>12점</td>
+<td>(1)~(4)번은 한 문항을 맞을 때마다 3점씩 획득</td>
+</tr>
+<tr>
+<td>2점</td>
+<td>(5)번 문항이 맞은 경우 2점 획득</td>
+</tr>
+</tbody>
+</table>
+<h2 id="해설-4">해설</h2>
+<ul>
+<li>기준용량 <span class="math display">\[ \%Z(\text{기준용량}) =
+\frac{\text{기준용량}}{\text{자기용량}} \times \%Z(\text{자기용량})
+\]</span> <span class="math display">\[ _ \%X*P = \frac{\%X*{S-P} +
+\%X*{P-T} - \%X*{T-S}}{2} \]</span> <span class="math display">\[ _
+\%X*T = \frac{\%X*{P-T} + \%X*{T-S} - \%X*{S-P}}{2} \]</span> <span
+class="math display">\[ \* \%X*S = \frac{\%X*{S-P} + \%X*{T-S} -
+\%X*{P-T}}{2} \]</span></li>
+</ul>
+<hr />
+<h1
+id="q16-다음-도면은-어떤-배전용-변전소의-단선결선도이다.-주어진-조건을-기준으로-하여-다음-물음에-답하시오.-배점-12점">Q16
+다음 도면은 어떤 배전용 변전소의 단선결선도이다. 주어진 조건을 기준으로
+하여 다음 물음에 답하시오. [배점: 12점]</h1>
+<figure>
+<img src="./2018_2/31_1.png" alt="그림" />
+<figcaption aria-hidden="true">그림</figcaption>
+</figure>
+<p>[조건]</p>
+<ol type="1">
+<li>주변압기의 정격은 1차 정격전압 66[kV], 2차 정격전압 6.6[kV],
+정격용량은 3상 10[MVA]이다.</li>
+<li>주변압기의 1차측 (즉, 1차모선)에서 본 전원 측 등가 임피던스는
+100[MVA] 기준으로 16[%]이고, 변압기의 내부 임피던스는 자기 용량 기준으로
+7[%]이다.</li>
+<li>또한 각 Feeder에 연결된 부하는 거의 동일하다.</li>
+<li>차단기의 정격차단용량, 정격전류, 단로기의 정격전류, 변류기의 1차
+정격전류 표준은 다음 표와 같다.</li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 26%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>정격전압 [kV]</th>
+<th>공칭전압 [kV]</th>
+<th>정격차단용량 [MVA]</th>
+<th>정격전류 [A]</th>
+<th>정격차단시간 [Hz]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.2</td>
+<td>6.6</td>
+<td>25</td>
+<td>200</td>
+<td>5</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>50</td>
+<td>400, 600</td>
+<td>5</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>100</td>
+<td>400, 600, 800, 1,200</td>
+<td>5</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>150</td>
+<td>400, 600, 800, 1,200</td>
+<td>5</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>200</td>
+<td>600, 800, 1,200</td>
+<td>5</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>250</td>
+<td>600, 800, 1,200, 2,000</td>
+<td>5</td>
+</tr>
+<tr>
+<td>72</td>
+<td>66</td>
+<td>1,000</td>
+<td>600, 800</td>
+<td>3</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>1,500</td>
+<td>600, 800, 1,200</td>
+<td>3</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>2,500</td>
+<td>600, 800, 1,200</td>
+<td>3</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>3,500</td>
+<td>800, 1,200</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>단로기(또는 선로 개폐기) 정격전류의 표준 규격
+<ul>
+<li>72.5[kV] : 600[A], 1,200[A]</li>
+<li>7.2[kV] 이하 : 400[A], 600[A], 1,200[A], 2,000[A]</li>
+</ul></li>
+<li>CT 1차 정격전류 표준 규격 (단위: [A])
+<ul>
+<li>50, 75, 100, 150, 200, 300, 400, 600, 800, 1,200, 1,500, 2,000</li>
+</ul></li>
+<li>CT 2차 정격전류는 5[A], PT의 2차 정격전압은 110[V]이다.</li>
+</ul>
+<ol type="1">
+<li>차단기 ①에 대한 정격차단용량과 정격전류를 계산하시오.</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><a href="#정답">정답</a></p>
+<ol start="2" type="1">
+<li>선로 개폐기 ②에 대한 정격전류를 계산하시오.</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><a href="#정답">정답</a></p>
+<ol start="3" type="1">
+<li>변류기 ③에 대한 1차 정격전류를 계산하시오.</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><a href="#정답">정답</a></p>
+<ol start="4" type="1">
+<li>PT ④에 대한 1차 정격전압은 얼마인지 쓰시오.</li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<ol start="5" type="1">
+<li>⑤로 표시된 기기의 명칭은 무엇인지 쓰시오.</li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<ol start="6" type="1">
+<li>피뢰기 ⑥에 대한 정격전압은 얼마인지 쓰시오.</li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<ol start="7" type="1">
+<li>⑦의 역할을 간단히 설명하시오.</li>
+</ol>
+<p><a href="#정답">정답</a></p>
+<hr />
+<h1 id="정답-및-해설">정답 및 해설</h1>
+<ol type="1">
+<li>차단기 ①에 대한 정격차단용량과 정격전류 계산</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ P_s = \frac{100}{\%Z_n} P_n =
+\frac{100}{16} \times 100 = 625 \text{[MVA]} \]</span></p>
+<p><span class="math display">\[ I_n = \frac{P}{\sqrt{3}V} = \frac{10
+\times 10^3}{\sqrt{3} \times 66} = 87.48 \text{[A]} \]</span></p>
+<p>정격차단용량과 정격전류는 각각 표에서 1,000[MVA], 600[A]를
+선정한다.</p>
+<p><a href="#정답">정답</a> 정격차단용량 1,000[MVA], 정격전류 600[A]</p>
+<ol start="2" type="1">
+<li>선로 개폐기 ②에 대한 정격전류 계산</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ I_n = \frac{P}{\sqrt{3}V} = \frac{10
+\times 10^3}{\sqrt{3} \times 66} = 87.48 \text{[A]} \]</span></p>
+<p>조건에 따라 600[A]를 선정한다.</p>
+<p><a href="#정답">정답</a> 600[A]</p>
+<ol start="3" type="1">
+<li>변류기 ③에 대한 1차 정격전류 계산</li>
+</ol>
+<p><a href="#계산과정">계산과정</a></p>
+<p><span class="math display">\[ I\_{2n} = \frac{P}{\sqrt{3}V} =
+\frac{10 \times 10^3}{\sqrt{3} \times 6.6} = 874.77 \text{[A]}
+\]</span></p>
+<p>위에서 구한 값에 여유배수를 적용한다.</p>
+<p><span class="math display">\[ I\_{2n} \times (1.25 \sim 1.5) = 874.77
+\times (1.25 \sim 1.5) = 1,093.46 \sim 1,312.16 \text{[A]} \]</span></p>
+<p>조건에 따라 1,200[A]를 선정한다.</p>
+<p><a href="#정답">정답</a> 1,200[A]</p>
+<ol start="4" type="1">
+<li><p>6,600[V]</p></li>
+<li><p>접지형 계기용 변성기</p></li>
+<li><p>72[kV]</p></li>
+<li><p>다회선 배전 선로에서 지락사고 시 고장회선을 선택하여
+차단한다.</p></li>
+</ol>
+<h2 id="부분점수-4">부분점수</h2>
+<table>
+<thead>
+<tr>
+<th>점수</th>
+<th>세부기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12점</td>
+<td>(1)~(7)이 모두 맞은 경우 12점 획득</td>
+</tr>
+<tr>
+<td>6점</td>
+<td>(1), (2)번은 한 문항을 맞을 때마다 3점씩 획득</td>
+</tr>
+<tr>
+<td>2점</td>
+<td>(3)문항이 맞은 경우 2점 획득</td>
+</tr>
+<tr>
+<td>4점</td>
+<td>(4)~(7)은 한 문항을 맞을 때마다 1점씩 획득</td>
+</tr>
+</tbody>
+</table>
+<h2 id="해설-5">해설</h2>
+<p>피뢰기의 정격전압은 다음에 정해진 기준에 따른다.</p>
+<table>
+<thead>
+<tr>
+<th>전력계통</th>
+<th></th>
+<th>피뢰기의 정격전압[kV]</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전압[kV]</td>
+<td>중성점 접지방식</td>
+<td>변전소</td>
+<td>배전선로</td>
+</tr>
+<tr>
+<td>345</td>
+<td>유효접지</td>
+<td>288</td>
+<td></td>
+</tr>
+<tr>
+<td>154</td>
+<td>유효접지</td>
+<td>144</td>
+<td></td>
+</tr>
+<tr>
+<td>66</td>
+<td>PC 접지 또는 비접지</td>
+<td>72</td>
+<td></td>
+</tr>
+<tr>
+<td>22</td>
+<td>PC 접지 또는 비접지</td>
+<td>24</td>
+<td></td>
+</tr>
+<tr>
+<td>22.9</td>
+<td>3상 4선 다중접지</td>
+<td>21</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+<p>[주] 전압 22.9[kV-Y] 이하의 배전선로에서 수전하는 설비의 피뢰기
+정격전압[kV]은 배전선로용을 적용한다.</p>
+<hr />
+</body>
+</html>
