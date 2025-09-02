@@ -1,0 +1,4243 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<style data-rc-order="prepend" rc-util-key="@ant-design-icons">
+      .anticon {
+        display: inline-flex;
+        align-items: center;
+        color: inherit;
+        font-style: normal;
+        line-height: 0;
+        text-align: center;
+        text-transform: none;
+        vertical-align: -0.125em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .anticon > * {
+        line-height: 1;
+      }
+
+      .anticon svg {
+        display: inline-block;
+      }
+
+      .anticon::before {
+        display: none;
+      }
+
+      .anticon .anticon-icon {
+        display: block;
+      }
+
+      .anticon[tabindex] {
+        cursor: pointer;
+      }
+
+      .anticon-spin::before,
+      .anticon-spin {
+        display: inline-block;
+        -webkit-animation: loadingCircle 1s infinite linear;
+        animation: loadingCircle 1s infinite linear;
+      }
+
+      @-webkit-keyframes loadingCircle {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes loadingCircle {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+<style data-css-hash="1q30qww" data-rc-order="prependQueue" data-rc-priority="-999" data-token-hash="8a1xef">
+      :where(.css-98ntnt).ant-spin {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-spin::before,
+      :where(.css-98ntnt).ant-spin::after {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-spin [class^="ant-spin"],
+      :where(.css-98ntnt).ant-spin [class*=" ant-spin"] {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-spin [class^="ant-spin"]::before,
+      :where(.css-98ntnt).ant-spin [class*=" ant-spin"]::before,
+      :where(.css-98ntnt).ant-spin [class^="ant-spin"]::after,
+      :where(.css-98ntnt).ant-spin [class*=" ant-spin"]::after {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-spin {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: #1677ff;
+        font-size: 0;
+        line-height: 1.5714285714285714;
+        list-style: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        position: absolute;
+        display: none;
+        text-align: center;
+        vertical-align: middle;
+        opacity: 0;
+        transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+      }
+      :where(.css-98ntnt).ant-spin-spinning {
+        position: relative;
+        display: inline-block;
+        opacity: 1;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-text {
+        font-size: 14px;
+        padding-top: 5px;
+      }
+      :where(.css-98ntnt).ant-spin-fullscreen {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.45);
+        z-index: 1000;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s;
+      }
+      :where(.css-98ntnt).ant-spin-fullscreen-show {
+        opacity: 1;
+        visibility: visible;
+      }
+      :where(.css-98ntnt).ant-spin-fullscreen .ant-spin .ant-spin-dot-holder {
+        color: #fff;
+      }
+      :where(.css-98ntnt).ant-spin-fullscreen .ant-spin .ant-spin-text {
+        color: #fff;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading {
+        position: relative;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading > div > .ant-spin {
+        position: absolute;
+        top: 0;
+        inset-inline-start: 0;
+        z-index: 4;
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-height: 400px;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading
+        > div
+        > .ant-spin
+        .ant-spin-dot {
+        position: absolute;
+        top: 50%;
+        inset-inline-start: 50%;
+        margin: -10px;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading
+        > div
+        > .ant-spin
+        .ant-spin-text {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-shadow: 0 1px 2px #ffffff;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading
+        > div
+        > .ant-spin.ant-spin-show-text
+        .ant-spin-dot {
+        margin-top: -20px;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading
+        > div
+        > .ant-spin-sm
+        .ant-spin-dot {
+        margin: -7px;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading
+        > div
+        > .ant-spin-sm
+        .ant-spin-text {
+        padding-top: 2px;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading
+        > div
+        > .ant-spin-sm.ant-spin-show-text
+        .ant-spin-dot {
+        margin-top: -17px;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading
+        > div
+        > .ant-spin-lg
+        .ant-spin-dot {
+        margin: -16px;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading
+        > div
+        > .ant-spin-lg
+        .ant-spin-text {
+        padding-top: 11px;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading
+        > div
+        > .ant-spin-lg.ant-spin-show-text
+        .ant-spin-dot {
+        margin-top: -26px;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading .ant-spin-container {
+        position: relative;
+        transition: opacity 0.3s;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading .ant-spin-container::after {
+        position: absolute;
+        top: 0;
+        inset-inline-end: 0;
+        bottom: 0;
+        inset-inline-start: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        opacity: 0;
+        transition: all 0.3s;
+        content: "";
+        pointer-events: none;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading .ant-spin-blur {
+        clear: both;
+        opacity: 0.5;
+        user-select: none;
+        pointer-events: none;
+      }
+      :where(.css-98ntnt).ant-spin-nested-loading .ant-spin-blur::after {
+        opacity: 0.4;
+        pointer-events: auto;
+      }
+      :where(.css-98ntnt).ant-spin-tip {
+        color: rgba(0, 0, 0, 0.45);
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-progress {
+        position: absolute;
+        top: 0;
+        inset-inline-start: 0;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-holder {
+        width: 1em;
+        height: 1em;
+        font-size: 20px;
+        display: inline-block;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform-origin: 50% 50%;
+        line-height: 1;
+        color: #1677ff;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-holder-hidden {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot {
+        position: relative;
+        display: inline-block;
+        font-size: 20px;
+        width: 1em;
+        height: 1em;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-item {
+        position: absolute;
+        display: block;
+        width: 9px;
+        height: 9px;
+        background: currentColor;
+        border-radius: 100%;
+        transform: scale(0.75);
+        transform-origin: 50% 50%;
+        opacity: 0.3;
+        animation-name: css-98ntnt-antSpinMove;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-item:nth-child(1) {
+        top: 0;
+        inset-inline-start: 0;
+        animation-delay: 0s;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-item:nth-child(2) {
+        top: 0;
+        inset-inline-end: 0;
+        animation-delay: 0.4s;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-item:nth-child(3) {
+        inset-inline-end: 0;
+        bottom: 0;
+        animation-delay: 0.8s;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-item:nth-child(4) {
+        bottom: 0;
+        inset-inline-start: 0;
+        animation-delay: 1.2s;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-spin {
+        transform: rotate(45deg);
+        animation-name: css-98ntnt-antRotate;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-circle {
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.3s ease, stroke-dasharray 0.3s ease,
+          stroke 0.3s ease, stroke-width 0.3s ease, opacity 0.3s ease;
+        fill-opacity: 0;
+        stroke: currentcolor;
+      }
+      :where(.css-98ntnt).ant-spin .ant-spin-dot-circle-bg {
+        stroke: rgba(0, 0, 0, 0.06);
+      }
+      :where(.css-98ntnt).ant-spin-sm .ant-spin-dot {
+        font-size: 14px;
+      }
+      :where(.css-98ntnt).ant-spin-sm .ant-spin-dot-holder i {
+        width: 6px;
+        height: 6px;
+      }
+      :where(.css-98ntnt).ant-spin-lg .ant-spin-dot {
+        font-size: 32px;
+      }
+      :where(.css-98ntnt).ant-spin-lg .ant-spin-dot-holder i {
+        width: 14px;
+        height: 14px;
+      }
+      :where(.css-98ntnt).ant-spin.ant-spin-show-text .ant-spin-text {
+        display: block;
+      }
+    </style>
+<style data-css-hash="_effect-css-98ntnt-antSpinMove" data-rc-order="prependQueue" data-rc-priority="-999">
+      @keyframes css-98ntnt-antSpinMove {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+<style data-css-hash="_effect-css-98ntnt-antRotate" data-rc-order="prependQueue" data-rc-priority="-999">
+      @keyframes css-98ntnt-antRotate {
+        to {
+          transform: rotate(405deg);
+        }
+      }
+    </style>
+<style data-css-hash="166q4fy" data-rc-order="prependQueue" data-rc-priority="-999" data-token-hash="8a1xef">
+      :where(.css-98ntnt).ant-wave {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-wave::before,
+      :where(.css-98ntnt).ant-wave::after {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-wave [class^="ant-wave"],
+      :where(.css-98ntnt).ant-wave [class*=" ant-wave"] {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-wave [class^="ant-wave"]::before,
+      :where(.css-98ntnt).ant-wave [class*=" ant-wave"]::before,
+      :where(.css-98ntnt).ant-wave [class^="ant-wave"]::after,
+      :where(.css-98ntnt).ant-wave [class*=" ant-wave"]::after {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-wave {
+        position: absolute;
+        background: transparent;
+        pointer-events: none;
+        box-sizing: border-box;
+        color: var(--wave-color, #1677ff);
+        box-shadow: 0 0 0 0 currentcolor;
+        opacity: 0.2;
+      }
+      :where(.css-98ntnt).ant-wave.wave-motion-appear {
+        transition: box-shadow 0.4s cubic-bezier(0.08, 0.82, 0.17, 1),
+          opacity 2s cubic-bezier(0.08, 0.82, 0.17, 1);
+      }
+      :where(.css-98ntnt).ant-wave.wave-motion-appear-active {
+        box-shadow: 0 0 0 6px currentcolor;
+        opacity: 0;
+      }
+      :where(.css-98ntnt).ant-wave.wave-motion-appear.wave-quick {
+        transition: box-shadow 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+          opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+    </style>
+<style data-css-hash="1osk5zt" data-rc-order="prependQueue" data-rc-priority="-999" data-token-hash="8a1xef">
+      :where(.css-98ntnt).ant-btn {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-btn::before,
+      :where(.css-98ntnt).ant-btn::after {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-btn [class^="ant-btn"],
+      :where(.css-98ntnt).ant-btn [class*=" ant-btn"] {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-btn [class^="ant-btn"]::before,
+      :where(.css-98ntnt).ant-btn [class*=" ant-btn"]::before,
+      :where(.css-98ntnt).ant-btn [class^="ant-btn"]::after,
+      :where(.css-98ntnt).ant-btn [class*=" ant-btn"]::after {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-btn {
+        outline: none;
+        position: relative;
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+        white-space: nowrap;
+        text-align: center;
+        background-image: none;
+        background: transparent;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        user-select: none;
+        touch-action: manipulation;
+        color: rgba(0, 0, 0, 0.88);
+      }
+      :where(.css-98ntnt).ant-btn:disabled > * {
+        pointer-events: none;
+      }
+      :where(.css-98ntnt).ant-btn > span {
+        display: inline-block;
+      }
+      :where(.css-98ntnt).ant-btn .ant-btn-icon {
+        line-height: 1;
+      }
+      :where(.css-98ntnt).ant-btn > a {
+        color: currentColor;
+      }
+      :where(.css-98ntnt).ant-btn:not(:disabled):focus-visible {
+        outline: 4px solid #91caff;
+        outline-offset: 1px;
+        transition: outline-offset 0s, outline 0s;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-two-chinese-chars::first-letter {
+        letter-spacing: 0.34em;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-two-chinese-chars > *:not(.anticon) {
+        margin-inline-end: -0.34em;
+        letter-spacing: 0.34em;
+      }
+      :where(.css-98ntnt).ant-btn-icon-end {
+        flex-direction: row-reverse;
+      }
+      :where(.css-98ntnt).ant-btn {
+        font-size: 14px;
+        line-height: 1.5714285714285714;
+        height: 32px;
+        padding: 4px 15px;
+        border-radius: 6px;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-icon-only {
+        width: 32px;
+        padding-inline: 0;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-icon-only.ant-btn-compact-item {
+        flex: none;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-icon-only.ant-btn-round {
+        width: auto;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-icon-only .anticon {
+        font-size: 16px;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-loading {
+        opacity: 0.65;
+        cursor: default;
+      }
+      :where(.css-98ntnt).ant-btn .ant-btn-loading-icon {
+        transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+          opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-circle.ant-btn {
+        min-width: 32px;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        border-radius: 50%;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-round.ant-btn {
+        border-radius: 32px;
+        padding-inline-start: 16px;
+        padding-inline-end: 16px;
+      }
+      :where(.css-98ntnt).ant-btn-sm {
+        font-size: 14px;
+        line-height: 1.5714285714285714;
+        height: 24px;
+        padding: 0px 7px;
+        border-radius: 4px;
+      }
+      :where(.css-98ntnt).ant-btn-sm.ant-btn-icon-only {
+        width: 24px;
+        padding-inline: 0;
+      }
+      :where(.css-98ntnt).ant-btn-sm.ant-btn-icon-only.ant-btn-compact-item {
+        flex: none;
+      }
+      :where(.css-98ntnt).ant-btn-sm.ant-btn-icon-only.ant-btn-round {
+        width: auto;
+      }
+      :where(.css-98ntnt).ant-btn-sm.ant-btn-icon-only .anticon {
+        font-size: 14px;
+      }
+      :where(.css-98ntnt).ant-btn-sm.ant-btn-loading {
+        opacity: 0.65;
+        cursor: default;
+      }
+      :where(.css-98ntnt).ant-btn-sm .ant-btn-loading-icon {
+        transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+          opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-circle.ant-btn-sm {
+        min-width: 24px;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        border-radius: 50%;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-round.ant-btn-sm {
+        border-radius: 24px;
+        padding-inline-start: 12px;
+        padding-inline-end: 12px;
+      }
+      :where(.css-98ntnt).ant-btn-lg {
+        font-size: 16px;
+        line-height: 1.5;
+        height: 40px;
+        padding: 7px 15px;
+        border-radius: 8px;
+      }
+      :where(.css-98ntnt).ant-btn-lg.ant-btn-icon-only {
+        width: 40px;
+        padding-inline: 0;
+      }
+      :where(.css-98ntnt).ant-btn-lg.ant-btn-icon-only.ant-btn-compact-item {
+        flex: none;
+      }
+      :where(.css-98ntnt).ant-btn-lg.ant-btn-icon-only.ant-btn-round {
+        width: auto;
+      }
+      :where(.css-98ntnt).ant-btn-lg.ant-btn-icon-only .anticon {
+        font-size: 18px;
+      }
+      :where(.css-98ntnt).ant-btn-lg.ant-btn-loading {
+        opacity: 0.65;
+        cursor: default;
+      }
+      :where(.css-98ntnt).ant-btn-lg .ant-btn-loading-icon {
+        transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+          opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-circle.ant-btn-lg {
+        min-width: 40px;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        border-radius: 50%;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-round.ant-btn-lg {
+        border-radius: 40px;
+        padding-inline-start: 20px;
+        padding-inline-end: 20px;
+      }
+      :where(.css-98ntnt).ant-btn.ant-btn-block {
+        width: 100%;
+      }
+      :where(.css-98ntnt).ant-btn-default {
+        background: #ffffff;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.88);
+        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+      }
+      :where(.css-98ntnt).ant-btn-default:disabled,
+      :where(.css-98ntnt).ant-btn-default.ant-btn-disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+      :where(.css-98ntnt).ant-btn-default:not(:disabled):not(
+          .ant-btn-disabled
+        ):hover {
+        color: #4096ff;
+        border-color: #4096ff;
+        background: #ffffff;
+      }
+      :where(.css-98ntnt).ant-btn-default:not(:disabled):not(
+          .ant-btn-disabled
+        ):active {
+        color: #0958d9;
+        border-color: #0958d9;
+        background: #ffffff;
+      }
+      :where(.css-98ntnt).ant-btn-default.ant-btn-background-ghost {
+        color: #ffffff;
+        background: transparent;
+        border-color: #ffffff;
+        box-shadow: none;
+      }
+      :where(.css-98ntnt).ant-btn-default.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):hover {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-btn-default.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):active {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-btn-default.ant-btn-background-ghost:disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+        border-color: #d9d9d9;
+      }
+      :where(.css-98ntnt).ant-btn-default.ant-btn-dangerous {
+        color: #ff4d4f;
+        border-color: #ff4d4f;
+      }
+      :where(.css-98ntnt).ant-btn-default.ant-btn-dangerous:not(:disabled):not(
+          .ant-btn-disabled
+        ):hover {
+        color: #ff7875;
+        border-color: #ffa39e;
+      }
+      :where(.css-98ntnt).ant-btn-default.ant-btn-dangerous:not(:disabled):not(
+          .ant-btn-disabled
+        ):active {
+        color: #d9363e;
+        border-color: #d9363e;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-default.ant-btn-dangerous.ant-btn-background-ghost {
+        color: #ff4d4f;
+        background: transparent;
+        border-color: #ff4d4f;
+        box-shadow: none;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-default.ant-btn-dangerous.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):hover {
+        background: transparent;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-default.ant-btn-dangerous.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):active {
+        background: transparent;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-default.ant-btn-dangerous.ant-btn-background-ghost:disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+        border-color: #d9d9d9;
+      }
+      :where(.css-98ntnt).ant-btn-default.ant-btn-dangerous:disabled,
+      :where(.css-98ntnt).ant-btn-default.ant-btn-dangerous.ant-btn-disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+      :where(.css-98ntnt).ant-btn-primary {
+        color: #fff;
+        background: #1677ff;
+        box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+      }
+      :where(.css-98ntnt).ant-btn-primary:disabled,
+      :where(.css-98ntnt).ant-btn-primary.ant-btn-disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+      :where(.css-98ntnt).ant-btn-primary:not(:disabled):not(
+          .ant-btn-disabled
+        ):hover {
+        color: #fff;
+        background: #4096ff;
+      }
+      :where(.css-98ntnt).ant-btn-primary:not(:disabled):not(
+          .ant-btn-disabled
+        ):active {
+        color: #fff;
+        background: #0958d9;
+      }
+      :where(.css-98ntnt).ant-btn-primary.ant-btn-background-ghost {
+        color: #1677ff;
+        background: transparent;
+        border-color: #1677ff;
+        box-shadow: none;
+      }
+      :where(.css-98ntnt).ant-btn-primary.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):hover {
+        background: transparent;
+        color: #4096ff;
+        border-color: #4096ff;
+      }
+      :where(.css-98ntnt).ant-btn-primary.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):active {
+        background: transparent;
+        color: #0958d9;
+        border-color: #0958d9;
+      }
+      :where(.css-98ntnt).ant-btn-primary.ant-btn-background-ghost:disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+        border-color: #d9d9d9;
+      }
+      :where(.css-98ntnt).ant-btn-primary.ant-btn-dangerous {
+        background: #ff4d4f;
+        box-shadow: 0 2px 0 rgba(255, 38, 5, 0.06);
+        color: #fff;
+      }
+      :where(.css-98ntnt).ant-btn-primary.ant-btn-dangerous:not(:disabled):not(
+          .ant-btn-disabled
+        ):hover {
+        background: #ff7875;
+      }
+      :where(.css-98ntnt).ant-btn-primary.ant-btn-dangerous:not(:disabled):not(
+          .ant-btn-disabled
+        ):active {
+        background: #d9363e;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-primary.ant-btn-dangerous.ant-btn-background-ghost {
+        color: #ff4d4f;
+        background: transparent;
+        border-color: #ff4d4f;
+        box-shadow: none;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-primary.ant-btn-dangerous.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):hover {
+        background: transparent;
+        color: #ff7875;
+        border-color: #ff7875;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-primary.ant-btn-dangerous.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):active {
+        background: transparent;
+        color: #d9363e;
+        border-color: #d9363e;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-primary.ant-btn-dangerous.ant-btn-background-ghost:disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+        border-color: #d9d9d9;
+      }
+      :where(.css-98ntnt).ant-btn-primary.ant-btn-dangerous:disabled,
+      :where(.css-98ntnt).ant-btn-primary.ant-btn-dangerous.ant-btn-disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+      :where(.css-98ntnt).ant-btn-dashed {
+        background: #ffffff;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.88);
+        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+        border-style: dashed;
+      }
+      :where(.css-98ntnt).ant-btn-dashed:disabled,
+      :where(.css-98ntnt).ant-btn-dashed.ant-btn-disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+      :where(.css-98ntnt).ant-btn-dashed:not(:disabled):not(
+          .ant-btn-disabled
+        ):hover {
+        color: #4096ff;
+        border-color: #4096ff;
+        background: #ffffff;
+      }
+      :where(.css-98ntnt).ant-btn-dashed:not(:disabled):not(
+          .ant-btn-disabled
+        ):active {
+        color: #0958d9;
+        border-color: #0958d9;
+        background: #ffffff;
+      }
+      :where(.css-98ntnt).ant-btn-dashed.ant-btn-background-ghost {
+        color: #ffffff;
+        background: transparent;
+        border-color: #ffffff;
+        box-shadow: none;
+      }
+      :where(.css-98ntnt).ant-btn-dashed.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):hover {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-btn-dashed.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):active {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-btn-dashed.ant-btn-background-ghost:disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+        border-color: #d9d9d9;
+      }
+      :where(.css-98ntnt).ant-btn-dashed.ant-btn-dangerous {
+        color: #ff4d4f;
+        border-color: #ff4d4f;
+      }
+      :where(.css-98ntnt).ant-btn-dashed.ant-btn-dangerous:not(:disabled):not(
+          .ant-btn-disabled
+        ):hover {
+        color: #ff7875;
+        border-color: #ffa39e;
+      }
+      :where(.css-98ntnt).ant-btn-dashed.ant-btn-dangerous:not(:disabled):not(
+          .ant-btn-disabled
+        ):active {
+        color: #d9363e;
+        border-color: #d9363e;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-dashed.ant-btn-dangerous.ant-btn-background-ghost {
+        color: #ff4d4f;
+        background: transparent;
+        border-color: #ff4d4f;
+        box-shadow: none;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-dashed.ant-btn-dangerous.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):hover {
+        background: transparent;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-dashed.ant-btn-dangerous.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):active {
+        background: transparent;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-btn-dashed.ant-btn-dangerous.ant-btn-background-ghost:disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+        border-color: #d9d9d9;
+      }
+      :where(.css-98ntnt).ant-btn-dashed.ant-btn-dangerous:disabled,
+      :where(.css-98ntnt).ant-btn-dashed.ant-btn-dangerous.ant-btn-disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+      :where(.css-98ntnt).ant-btn-link {
+        color: #1677ff;
+      }
+      :where(.css-98ntnt).ant-btn-link:not(:disabled):not(
+          .ant-btn-disabled
+        ):hover {
+        color: #69b1ff;
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-btn-link:not(:disabled):not(
+          .ant-btn-disabled
+        ):active {
+        color: #0958d9;
+      }
+      :where(.css-98ntnt).ant-btn-link:disabled,
+      :where(.css-98ntnt).ant-btn-link.ant-btn-disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+      }
+      :where(.css-98ntnt).ant-btn-link.ant-btn-dangerous {
+        color: #ff4d4f;
+      }
+      :where(.css-98ntnt).ant-btn-link.ant-btn-dangerous:not(:disabled):not(
+          .ant-btn-disabled
+        ):hover {
+        color: #ff7875;
+      }
+      :where(.css-98ntnt).ant-btn-link.ant-btn-dangerous:not(:disabled):not(
+          .ant-btn-disabled
+        ):active {
+        color: #d9363e;
+      }
+      :where(.css-98ntnt).ant-btn-link.ant-btn-dangerous:disabled,
+      :where(.css-98ntnt).ant-btn-link.ant-btn-dangerous.ant-btn-disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+      }
+      :where(.css-98ntnt).ant-btn-text:not(:disabled):not(
+          .ant-btn-disabled
+        ):hover {
+        color: rgba(0, 0, 0, 0.88);
+        background: rgba(0, 0, 0, 0.06);
+      }
+      :where(.css-98ntnt).ant-btn-text:not(:disabled):not(
+          .ant-btn-disabled
+        ):active {
+        color: rgba(0, 0, 0, 0.88);
+        background: rgba(0, 0, 0, 0.15);
+      }
+      :where(.css-98ntnt).ant-btn-text:disabled,
+      :where(.css-98ntnt).ant-btn-text.ant-btn-disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+      }
+      :where(.css-98ntnt).ant-btn-text.ant-btn-dangerous {
+        color: #ff4d4f;
+      }
+      :where(.css-98ntnt).ant-btn-text.ant-btn-dangerous:disabled,
+      :where(.css-98ntnt).ant-btn-text.ant-btn-dangerous.ant-btn-disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+      }
+      :where(.css-98ntnt).ant-btn-text.ant-btn-dangerous:not(:disabled):not(
+          .ant-btn-disabled
+        ):hover {
+        color: #ff7875;
+        background: #fff2f0;
+      }
+      :where(.css-98ntnt).ant-btn-text.ant-btn-dangerous:not(:disabled):not(
+          .ant-btn-disabled
+        ):active {
+        color: #ff7875;
+        background: #ffccc7;
+      }
+      :where(.css-98ntnt).ant-btn-ghost.ant-btn-background-ghost {
+        color: #ffffff;
+        background: transparent;
+        border-color: #ffffff;
+        box-shadow: none;
+      }
+      :where(.css-98ntnt).ant-btn-ghost.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):hover {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-btn-ghost.ant-btn-background-ghost:not(
+          :disabled
+        ):not(.ant-btn-disabled):active {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-btn-ghost.ant-btn-background-ghost:disabled {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+        border-color: #d9d9d9;
+      }
+      :where(.css-98ntnt).ant-btn-group {
+        position: relative;
+        display: inline-flex;
+      }
+      :where(.css-98ntnt).ant-btn-group > span:not(:last-child),
+      :where(.css-98ntnt).ant-btn-group > .ant-btn:not(:last-child),
+      :where(.css-98ntnt).ant-btn-group > span:not(:last-child) > .ant-btn,
+      :where(.css-98ntnt).ant-btn-group > .ant-btn:not(:last-child) > .ant-btn {
+        border-start-end-radius: 0;
+        border-end-end-radius: 0;
+      }
+      :where(.css-98ntnt).ant-btn-group > span:not(:first-child),
+      :where(.css-98ntnt).ant-btn-group > .ant-btn:not(:first-child) {
+        margin-inline-start: -1px;
+      }
+      :where(.css-98ntnt).ant-btn-group > span:not(:first-child),
+      :where(.css-98ntnt).ant-btn-group > .ant-btn:not(:first-child),
+      :where(.css-98ntnt).ant-btn-group > span:not(:first-child) > .ant-btn,
+      :where(.css-98ntnt).ant-btn-group
+        > .ant-btn:not(:first-child)
+        > .ant-btn {
+        border-start-start-radius: 0;
+        border-end-start-radius: 0;
+      }
+      :where(.css-98ntnt).ant-btn-group .ant-btn {
+        position: relative;
+        z-index: 1;
+      }
+      :where(.css-98ntnt).ant-btn-group .ant-btn:hover,
+      :where(.css-98ntnt).ant-btn-group .ant-btn:focus,
+      :where(.css-98ntnt).ant-btn-group .ant-btn:active {
+        z-index: 2;
+      }
+      :where(.css-98ntnt).ant-btn-group .ant-btn[disabled] {
+        z-index: 0;
+      }
+      :where(.css-98ntnt).ant-btn-group .ant-btn-icon-only {
+        font-size: 14px;
+      }
+      :where(.css-98ntnt).ant-btn-group > span:not(:last-child):not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > .ant-btn-primary:not(:last-child):not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > span:not(:last-child)
+        > .ant-btn-primary:not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > .ant-btn-primary:not(:last-child)
+        > .ant-btn-primary:not(:disabled) {
+        border-inline-end-color: #4096ff;
+      }
+      :where(.css-98ntnt).ant-btn-group > span:not(:first-child):not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > .ant-btn-primary:not(:first-child):not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > span:not(:first-child)
+        > .ant-btn-primary:not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > .ant-btn-primary:not(:first-child)
+        > .ant-btn-primary:not(:disabled) {
+        border-inline-start-color: #4096ff;
+      }
+      :where(.css-98ntnt).ant-btn-group > span:not(:last-child):not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > .ant-btn-danger:not(:last-child):not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > span:not(:last-child)
+        > .ant-btn-danger:not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > .ant-btn-danger:not(:last-child)
+        > .ant-btn-danger:not(:disabled) {
+        border-inline-end-color: #ff7875;
+      }
+      :where(.css-98ntnt).ant-btn-group > span:not(:first-child):not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > .ant-btn-danger:not(:first-child):not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > span:not(:first-child)
+        > .ant-btn-danger:not(:disabled),
+      :where(.css-98ntnt).ant-btn-group
+        > .ant-btn-danger:not(:first-child)
+        > .ant-btn-danger:not(:disabled) {
+        border-inline-start-color: #ff7875;
+      }
+    </style>
+<style data-css-hash="5wujs0" data-rc-order="prependQueue" data-rc-priority="-999" data-token-hash="8a1xef">
+      :where(.css-98ntnt).ant-tooltip {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: rgba(0, 0, 0, 0.88);
+        font-size: 14px;
+        line-height: 1.5714285714285714;
+        list-style: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        position: absolute;
+        z-index: 1070;
+        display: block;
+        width: max-content;
+        max-width: 250px;
+        visibility: visible;
+        transform-origin: var(--arrow-x, 50%) var(--arrow-y, 50%);
+        --antd-arrow-background-color: rgba(0, 0, 0, 0.85);
+      }
+      :where(.css-98ntnt).ant-tooltip-hidden {
+        display: none;
+      }
+      :where(.css-98ntnt).ant-tooltip .ant-tooltip-inner {
+        min-width: 1em;
+        min-height: 32px;
+        padding: 6px 8px;
+        color: #fff;
+        text-align: start;
+        text-decoration: none;
+        word-wrap: break-word;
+        background-color: rgba(0, 0, 0, 0.85);
+        border-radius: 6px;
+        box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+          0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-left .ant-tooltip-inner,
+      :where(.css-98ntnt).ant-tooltip-placement-leftTop .ant-tooltip-inner,
+      :where(.css-98ntnt).ant-tooltip-placement-leftBottom .ant-tooltip-inner,
+      :where(.css-98ntnt).ant-tooltip-placement-right .ant-tooltip-inner,
+      :where(.css-98ntnt).ant-tooltip-placement-rightTop .ant-tooltip-inner,
+      :where(.css-98ntnt).ant-tooltip-placement-rightBottom .ant-tooltip-inner {
+        border-radius: 6px;
+      }
+      :where(.css-98ntnt).ant-tooltip .ant-tooltip-content {
+        position: relative;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-blue .ant-tooltip-inner {
+        background-color: #1677ff;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-blue .ant-tooltip-arrow {
+        --antd-arrow-background-color: #1677ff;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-purple .ant-tooltip-inner {
+        background-color: #722ed1;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-purple .ant-tooltip-arrow {
+        --antd-arrow-background-color: #722ed1;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-cyan .ant-tooltip-inner {
+        background-color: #13c2c2;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-cyan .ant-tooltip-arrow {
+        --antd-arrow-background-color: #13c2c2;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-green .ant-tooltip-inner {
+        background-color: #52c41a;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-green .ant-tooltip-arrow {
+        --antd-arrow-background-color: #52c41a;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-magenta .ant-tooltip-inner {
+        background-color: #eb2f96;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-magenta .ant-tooltip-arrow {
+        --antd-arrow-background-color: #eb2f96;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-pink .ant-tooltip-inner {
+        background-color: #eb2f96;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-pink .ant-tooltip-arrow {
+        --antd-arrow-background-color: #eb2f96;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-red .ant-tooltip-inner {
+        background-color: #f5222d;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-red .ant-tooltip-arrow {
+        --antd-arrow-background-color: #f5222d;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-orange .ant-tooltip-inner {
+        background-color: #fa8c16;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-orange .ant-tooltip-arrow {
+        --antd-arrow-background-color: #fa8c16;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-yellow .ant-tooltip-inner {
+        background-color: #fadb14;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-yellow .ant-tooltip-arrow {
+        --antd-arrow-background-color: #fadb14;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-volcano .ant-tooltip-inner {
+        background-color: #fa541c;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-volcano .ant-tooltip-arrow {
+        --antd-arrow-background-color: #fa541c;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-geekblue .ant-tooltip-inner {
+        background-color: #2f54eb;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-geekblue .ant-tooltip-arrow {
+        --antd-arrow-background-color: #2f54eb;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-lime .ant-tooltip-inner {
+        background-color: #a0d911;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-lime .ant-tooltip-arrow {
+        --antd-arrow-background-color: #a0d911;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-gold .ant-tooltip-inner {
+        background-color: #faad14;
+      }
+      :where(.css-98ntnt).ant-tooltip.ant-tooltip-gold .ant-tooltip-arrow {
+        --antd-arrow-background-color: #faad14;
+      }
+      :where(.css-98ntnt).ant-tooltip-rtl {
+        direction: rtl;
+      }
+      :where(.css-98ntnt).ant-tooltip .ant-tooltip-arrow {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        pointer-events: none;
+        width: 16px;
+        height: 16px;
+        overflow: hidden;
+      }
+      :where(.css-98ntnt).ant-tooltip .ant-tooltip-arrow::before {
+        position: absolute;
+        bottom: 0;
+        inset-inline-start: 0;
+        width: 16px;
+        height: 8px;
+        background: var(--antd-arrow-background-color);
+        clip-path: polygon(
+          1.6568542494923806px 100%,
+          50% 1.6568542494923806px,
+          14.34314575050762px 100%,
+          1.6568542494923806px 100%
+        );
+        clip-path: path(
+          "M 0 8 A 4 4 0 0 0 2.82842712474619 6.82842712474619 L 6.585786437626905 3.0710678118654755 A 2 2 0 0 1 9.414213562373096 3.0710678118654755 L 13.17157287525381 6.82842712474619 A 4 4 0 0 0 16 8 Z"
+        );
+        content: "";
+      }
+      :where(.css-98ntnt).ant-tooltip .ant-tooltip-arrow::after {
+        content: "";
+        position: absolute;
+        width: 8.970562748477143px;
+        height: 8.970562748477143px;
+        bottom: 0;
+        inset-inline: 0;
+        margin: auto;
+        border-radius: 0 0 2px 0;
+        transform: translateY(50%) rotate(-135deg);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+        z-index: 0;
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-tooltip .ant-tooltip-arrow:before {
+        background: var(--antd-arrow-background-color);
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-top > .ant-tooltip-arrow,
+      :where(.css-98ntnt).ant-tooltip-placement-topLeft > .ant-tooltip-arrow,
+      :where(.css-98ntnt).ant-tooltip-placement-topRight > .ant-tooltip-arrow {
+        bottom: 0;
+        transform: translateY(100%) rotate(180deg);
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-top > .ant-tooltip-arrow {
+        left: 50%;
+        transform: translateX(-50%) translateY(100%) rotate(180deg);
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-topLeft > .ant-tooltip-arrow {
+        left: 12px;
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-topRight > .ant-tooltip-arrow {
+        right: 12px;
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-bottom > .ant-tooltip-arrow,
+      :where(.css-98ntnt).ant-tooltip-placement-bottomLeft > .ant-tooltip-arrow,
+      :where(.css-98ntnt).ant-tooltip-placement-bottomRight
+        > .ant-tooltip-arrow {
+        top: 0;
+        transform: translateY(-100%);
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-bottom > .ant-tooltip-arrow {
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-bottomLeft
+        > .ant-tooltip-arrow {
+        left: 12px;
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-bottomRight
+        > .ant-tooltip-arrow {
+        right: 12px;
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-left > .ant-tooltip-arrow,
+      :where(.css-98ntnt).ant-tooltip-placement-leftTop > .ant-tooltip-arrow,
+      :where(.css-98ntnt).ant-tooltip-placement-leftBottom
+        > .ant-tooltip-arrow {
+        right: 0;
+        transform: translateX(100%) rotate(90deg);
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-left > .ant-tooltip-arrow {
+        top: 50%;
+        transform: translateY(-50%) translateX(100%) rotate(90deg);
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-leftTop > .ant-tooltip-arrow {
+        top: 8px;
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-leftBottom
+        > .ant-tooltip-arrow {
+        bottom: 8px;
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-right > .ant-tooltip-arrow,
+      :where(.css-98ntnt).ant-tooltip-placement-rightTop > .ant-tooltip-arrow,
+      :where(.css-98ntnt).ant-tooltip-placement-rightBottom
+        > .ant-tooltip-arrow {
+        left: 0;
+        transform: translateX(-100%) rotate(-90deg);
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-right > .ant-tooltip-arrow {
+        top: 50%;
+        transform: translateY(-50%) translateX(-100%) rotate(-90deg);
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-rightTop > .ant-tooltip-arrow {
+        top: 8px;
+      }
+      :where(.css-98ntnt).ant-tooltip-placement-rightBottom
+        > .ant-tooltip-arrow {
+        bottom: 8px;
+      }
+      :where(.css-98ntnt).ant-tooltip-pure {
+        position: relative;
+        max-width: none;
+        margin: 16px;
+      }
+      :where(.css-98ntnt).ant-zoom-big-fast-enter,
+      :where(.css-98ntnt).ant-zoom-big-fast-appear {
+        animation-duration: 0.1s;
+        animation-fill-mode: both;
+        animation-play-state: paused;
+      }
+      :where(.css-98ntnt).ant-zoom-big-fast-leave {
+        animation-duration: 0.1s;
+        animation-fill-mode: both;
+        animation-play-state: paused;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-zoom-big-fast-enter.ant-zoom-big-fast-enter-active,
+      :where(
+          .css-98ntnt
+        ).ant-zoom-big-fast-appear.ant-zoom-big-fast-appear-active {
+        animation-name: css-98ntnt-antZoomBigIn;
+        animation-play-state: running;
+      }
+      :where(
+          .css-98ntnt
+        ).ant-zoom-big-fast-leave.ant-zoom-big-fast-leave-active {
+        animation-name: css-98ntnt-antZoomBigOut;
+        animation-play-state: running;
+        pointer-events: none;
+      }
+      :where(.css-98ntnt).ant-zoom-big-fast-enter,
+      :where(.css-98ntnt).ant-zoom-big-fast-appear {
+        transform: scale(0);
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+      }
+      :where(.css-98ntnt).ant-zoom-big-fast-enter-prepare,
+      :where(.css-98ntnt).ant-zoom-big-fast-appear-prepare {
+        transform: none;
+      }
+      :where(.css-98ntnt).ant-zoom-big-fast-leave {
+        animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+      }
+    </style>
+<style data-css-hash="_effect-css-98ntnt-antZoomBigIn" data-rc-order="prependQueue" data-rc-priority="-999">
+      @keyframes css-98ntnt-antZoomBigIn {
+        0% {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+<style data-css-hash="_effect-css-98ntnt-antZoomBigOut" data-rc-order="prependQueue" data-rc-priority="-999">
+      @keyframes css-98ntnt-antZoomBigOut {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+      }
+    </style>
+<style data-css-hash="mmhqrf" data-rc-order="prependQueue" data-rc-priority="-999" data-token-hash="8a1xef"></style>
+<style data-css-hash="1vv6ep5" data-rc-order="prependQueue" data-rc-priority="-999" data-token-hash="8a1xef">
+      :where(.css-98ntnt).ant-popover {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: rgba(0, 0, 0, 0.88);
+        font-size: 14px;
+        line-height: 1.5714285714285714;
+        list-style: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1030;
+        font-weight: normal;
+        white-space: normal;
+        text-align: start;
+        cursor: auto;
+        user-select: text;
+        transform-origin: var(--arrow-x, 50%) var(--arrow-y, 50%);
+        --antd-arrow-background-color: #ffffff;
+        width: max-content;
+        max-width: 100vw;
+      }
+      :where(.css-98ntnt).ant-popover-rtl {
+        direction: rtl;
+      }
+      :where(.css-98ntnt).ant-popover-hidden {
+        display: none;
+      }
+      :where(.css-98ntnt).ant-popover .ant-popover-content {
+        position: relative;
+      }
+      :where(.css-98ntnt).ant-popover .ant-popover-inner {
+        background-color: #ffffff;
+        background-clip: padding-box;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+          0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+        padding: 12px;
+      }
+      :where(.css-98ntnt).ant-popover .ant-popover-title {
+        min-width: 177px;
+        margin-bottom: 8px;
+        color: rgba(0, 0, 0, 0.88);
+        font-weight: 600;
+        border-bottom: none;
+        padding: 0;
+      }
+      :where(.css-98ntnt).ant-popover .ant-popover-inner-content {
+        color: rgba(0, 0, 0, 0.88);
+        padding: 0;
+      }
+      :where(.css-98ntnt).ant-popover .ant-popover-arrow {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        pointer-events: none;
+        width: 16px;
+        height: 16px;
+        overflow: hidden;
+      }
+      :where(.css-98ntnt).ant-popover .ant-popover-arrow::before {
+        position: absolute;
+        bottom: 0;
+        inset-inline-start: 0;
+        width: 16px;
+        height: 8px;
+        background: var(--antd-arrow-background-color);
+        clip-path: polygon(
+          1.6568542494923806px 100%,
+          50% 1.6568542494923806px,
+          14.34314575050762px 100%,
+          1.6568542494923806px 100%
+        );
+        clip-path: path(
+          "M 0 8 A 4 4 0 0 0 2.82842712474619 6.82842712474619 L 6.585786437626905 3.0710678118654755 A 2 2 0 0 1 9.414213562373096 3.0710678118654755 L 13.17157287525381 6.82842712474619 A 4 4 0 0 0 16 8 Z"
+        );
+        content: "";
+      }
+      :where(.css-98ntnt).ant-popover .ant-popover-arrow::after {
+        content: "";
+        position: absolute;
+        width: 8.970562748477143px;
+        height: 8.970562748477143px;
+        bottom: 0;
+        inset-inline: 0;
+        margin: auto;
+        border-radius: 0 0 2px 0;
+        transform: translateY(50%) rotate(-135deg);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+        z-index: 0;
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover .ant-popover-arrow:before {
+        background: var(--antd-arrow-background-color);
+      }
+      :where(.css-98ntnt).ant-popover-placement-top > .ant-popover-arrow,
+      :where(.css-98ntnt).ant-popover-placement-topLeft > .ant-popover-arrow,
+      :where(.css-98ntnt).ant-popover-placement-topRight > .ant-popover-arrow {
+        bottom: 0;
+        transform: translateY(100%) rotate(180deg);
+      }
+      :where(.css-98ntnt).ant-popover-placement-top > .ant-popover-arrow {
+        left: 50%;
+        transform: translateX(-50%) translateY(100%) rotate(180deg);
+      }
+      :where(.css-98ntnt).ant-popover-placement-topLeft > .ant-popover-arrow {
+        left: 12px;
+      }
+      :where(.css-98ntnt).ant-popover-placement-topRight > .ant-popover-arrow {
+        right: 12px;
+      }
+      :where(.css-98ntnt).ant-popover-placement-bottom > .ant-popover-arrow,
+      :where(.css-98ntnt).ant-popover-placement-bottomLeft > .ant-popover-arrow,
+      :where(.css-98ntnt).ant-popover-placement-bottomRight
+        > .ant-popover-arrow {
+        top: 0;
+        transform: translateY(-100%);
+      }
+      :where(.css-98ntnt).ant-popover-placement-bottom > .ant-popover-arrow {
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+      }
+      :where(.css-98ntnt).ant-popover-placement-bottomLeft
+        > .ant-popover-arrow {
+        left: 12px;
+      }
+      :where(.css-98ntnt).ant-popover-placement-bottomRight
+        > .ant-popover-arrow {
+        right: 12px;
+      }
+      :where(.css-98ntnt).ant-popover-placement-left > .ant-popover-arrow,
+      :where(.css-98ntnt).ant-popover-placement-leftTop > .ant-popover-arrow,
+      :where(.css-98ntnt).ant-popover-placement-leftBottom
+        > .ant-popover-arrow {
+        right: 0;
+        transform: translateX(100%) rotate(90deg);
+      }
+      :where(.css-98ntnt).ant-popover-placement-left > .ant-popover-arrow {
+        top: 50%;
+        transform: translateY(-50%) translateX(100%) rotate(90deg);
+      }
+      :where(.css-98ntnt).ant-popover-placement-leftTop > .ant-popover-arrow {
+        top: 8px;
+      }
+      :where(.css-98ntnt).ant-popover-placement-leftBottom
+        > .ant-popover-arrow {
+        bottom: 8px;
+      }
+      :where(.css-98ntnt).ant-popover-placement-right > .ant-popover-arrow,
+      :where(.css-98ntnt).ant-popover-placement-rightTop > .ant-popover-arrow,
+      :where(.css-98ntnt).ant-popover-placement-rightBottom
+        > .ant-popover-arrow {
+        left: 0;
+        transform: translateX(-100%) rotate(-90deg);
+      }
+      :where(.css-98ntnt).ant-popover-placement-right > .ant-popover-arrow {
+        top: 50%;
+        transform: translateY(-50%) translateX(-100%) rotate(-90deg);
+      }
+      :where(.css-98ntnt).ant-popover-placement-rightTop > .ant-popover-arrow {
+        top: 8px;
+      }
+      :where(.css-98ntnt).ant-popover-placement-rightBottom
+        > .ant-popover-arrow {
+        bottom: 8px;
+      }
+      :where(.css-98ntnt).ant-popover-pure {
+        position: relative;
+        max-width: none;
+        margin: 16px;
+        display: inline-block;
+      }
+      :where(.css-98ntnt).ant-popover-pure .ant-popover-content {
+        display: inline-block;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-blue {
+        --antd-arrow-background-color: #1677ff;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-blue .ant-popover-inner {
+        background-color: #1677ff;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-blue .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-purple {
+        --antd-arrow-background-color: #722ed1;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-purple .ant-popover-inner {
+        background-color: #722ed1;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-purple .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-cyan {
+        --antd-arrow-background-color: #13c2c2;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-cyan .ant-popover-inner {
+        background-color: #13c2c2;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-cyan .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-green {
+        --antd-arrow-background-color: #52c41a;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-green .ant-popover-inner {
+        background-color: #52c41a;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-green .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-magenta {
+        --antd-arrow-background-color: #eb2f96;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-magenta .ant-popover-inner {
+        background-color: #eb2f96;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-magenta .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-pink {
+        --antd-arrow-background-color: #eb2f96;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-pink .ant-popover-inner {
+        background-color: #eb2f96;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-pink .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-red {
+        --antd-arrow-background-color: #f5222d;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-red .ant-popover-inner {
+        background-color: #f5222d;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-red .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-orange {
+        --antd-arrow-background-color: #fa8c16;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-orange .ant-popover-inner {
+        background-color: #fa8c16;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-orange .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-yellow {
+        --antd-arrow-background-color: #fadb14;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-yellow .ant-popover-inner {
+        background-color: #fadb14;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-yellow .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-volcano {
+        --antd-arrow-background-color: #fa541c;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-volcano .ant-popover-inner {
+        background-color: #fa541c;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-volcano .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-geekblue {
+        --antd-arrow-background-color: #2f54eb;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-geekblue .ant-popover-inner {
+        background-color: #2f54eb;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-geekblue .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-lime {
+        --antd-arrow-background-color: #a0d911;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-lime .ant-popover-inner {
+        background-color: #a0d911;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-lime .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-gold {
+        --antd-arrow-background-color: #faad14;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-gold .ant-popover-inner {
+        background-color: #faad14;
+      }
+      :where(.css-98ntnt).ant-popover.ant-popover-gold .ant-popover-arrow {
+        background: transparent;
+      }
+      :where(.css-98ntnt).ant-zoom-big-enter,
+      :where(.css-98ntnt).ant-zoom-big-appear {
+        animation-duration: 0.2s;
+        animation-fill-mode: both;
+        animation-play-state: paused;
+      }
+      :where(.css-98ntnt).ant-zoom-big-leave {
+        animation-duration: 0.2s;
+        animation-fill-mode: both;
+        animation-play-state: paused;
+      }
+      :where(.css-98ntnt).ant-zoom-big-enter.ant-zoom-big-enter-active,
+      :where(.css-98ntnt).ant-zoom-big-appear.ant-zoom-big-appear-active {
+        animation-name: css-98ntnt-antZoomBigIn;
+        animation-play-state: running;
+      }
+      :where(.css-98ntnt).ant-zoom-big-leave.ant-zoom-big-leave-active {
+        animation-name: css-98ntnt-antZoomBigOut;
+        animation-play-state: running;
+        pointer-events: none;
+      }
+      :where(.css-98ntnt).ant-zoom-big-enter,
+      :where(.css-98ntnt).ant-zoom-big-appear {
+        transform: scale(0);
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+      }
+      :where(.css-98ntnt).ant-zoom-big-enter-prepare,
+      :where(.css-98ntnt).ant-zoom-big-appear-prepare {
+        transform: none;
+      }
+      :where(.css-98ntnt).ant-zoom-big-leave {
+        animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+      }
+    </style>
+<style data-css-hash="1465c7b" data-rc-order="prependQueue" data-rc-priority="-999" data-token-hash="8a1xef">
+      :where(.css-98ntnt).ant-popconfirm {
+        z-index: 1060;
+      }
+      :where(.css-98ntnt).ant-popconfirm.ant-popover {
+        font-size: 14px;
+      }
+      :where(.css-98ntnt).ant-popconfirm .ant-popconfirm-message {
+        margin-bottom: 8px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: start;
+      }
+      :where(.css-98ntnt).ant-popconfirm
+        .ant-popconfirm-message
+        > .ant-popconfirm-message-icon
+        .anticon {
+        color: #faad14;
+        font-size: 14px;
+        line-height: 1;
+        margin-inline-end: 8px;
+      }
+      :where(.css-98ntnt).ant-popconfirm
+        .ant-popconfirm-message
+        .ant-popconfirm-title {
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.88);
+      }
+      :where(.css-98ntnt).ant-popconfirm
+        .ant-popconfirm-message
+        .ant-popconfirm-title:only-child {
+        font-weight: normal;
+      }
+      :where(.css-98ntnt).ant-popconfirm
+        .ant-popconfirm-message
+        .ant-popconfirm-description {
+        margin-top: 4px;
+        color: rgba(0, 0, 0, 0.88);
+      }
+      :where(.css-98ntnt).ant-popconfirm .ant-popconfirm-buttons {
+        text-align: end;
+        white-space: nowrap;
+      }
+      :where(.css-98ntnt).ant-popconfirm .ant-popconfirm-buttons button {
+        margin-inline-start: 8px;
+      }
+    </style>
+<style data-css-hash="1mpaw3v" data-rc-order="prependQueue" data-rc-priority="-999" data-token-hash="8a1xef">
+      :where(.css-98ntnt).ant-collapse {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-collapse::before,
+      :where(.css-98ntnt).ant-collapse::after {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-collapse [class^="ant-collapse"],
+      :where(.css-98ntnt).ant-collapse [class*=" ant-collapse"] {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-collapse [class^="ant-collapse"]::before,
+      :where(.css-98ntnt).ant-collapse [class*=" ant-collapse"]::before,
+      :where(.css-98ntnt).ant-collapse [class^="ant-collapse"]::after,
+      :where(.css-98ntnt).ant-collapse [class*=" ant-collapse"]::after {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-collapse {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: rgba(0, 0, 0, 0.88);
+        font-size: 14px;
+        line-height: 1.5714285714285714;
+        list-style: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        background-color: rgba(0, 0, 0, 0.02);
+        border: 1px solid #d9d9d9;
+        border-radius: 8px;
+      }
+      :where(.css-98ntnt).ant-collapse-rtl {
+        direction: rtl;
+      }
+      :where(.css-98ntnt).ant-collapse > .ant-collapse-item {
+        border-bottom: 1px solid #d9d9d9;
+      }
+      :where(.css-98ntnt).ant-collapse > .ant-collapse-item:last-child,
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item:last-child
+        > .ant-collapse-header {
+        border-radius: 0 0 8px 8px;
+      }
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item
+        > .ant-collapse-header {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        padding: 12px 16px;
+        color: rgba(0, 0, 0, 0.88);
+        line-height: 1.5714285714285714;
+        cursor: pointer;
+        transition: all 0.3s, visibility 0s;
+      }
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item
+        > .ant-collapse-header
+        > .ant-collapse-header-text {
+        flex: auto;
+      }
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item
+        > .ant-collapse-header:focus {
+        outline: none;
+      }
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item
+        > .ant-collapse-header
+        .ant-collapse-expand-icon {
+        height: 22px;
+        display: flex;
+        align-items: center;
+        padding-inline-end: 12px;
+      }
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item
+        > .ant-collapse-header
+        .ant-collapse-arrow {
+        display: inline-flex;
+        align-items: center;
+        color: inherit;
+        font-style: normal;
+        line-height: 0;
+        text-align: center;
+        text-transform: none;
+        vertical-align: -0.125em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 12px;
+        transition: transform 0.3s;
+      }
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item
+        > .ant-collapse-header
+        .ant-collapse-arrow
+        > * {
+        line-height: 1;
+      }
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item
+        > .ant-collapse-header
+        .ant-collapse-arrow
+        svg {
+        transition: transform 0.3s;
+      }
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item
+        > .ant-collapse-header
+        .ant-collapse-header-text {
+        margin-inline-end: auto;
+      }
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item
+        .ant-collapse-icon-collapsible-only {
+        cursor: unset;
+      }
+      :where(.css-98ntnt).ant-collapse
+        > .ant-collapse-item
+        .ant-collapse-icon-collapsible-only
+        .ant-collapse-expand-icon {
+        cursor: pointer;
+      }
+      :where(.css-98ntnt).ant-collapse .ant-collapse-content {
+        color: rgba(0, 0, 0, 0.88);
+        background-color: #ffffff;
+        border-top: 1px solid #d9d9d9;
+      }
+      :where(.css-98ntnt).ant-collapse
+        .ant-collapse-content
+        > .ant-collapse-content-box {
+        padding: 16px 16px;
+      }
+      :where(.css-98ntnt).ant-collapse .ant-collapse-content-hidden {
+        display: none;
+      }
+      :where(.css-98ntnt).ant-collapse-small
+        > .ant-collapse-item
+        > .ant-collapse-header {
+        padding: 8px 12px;
+        padding-inline-start: 8px;
+      }
+      :where(.css-98ntnt).ant-collapse-small
+        > .ant-collapse-item
+        > .ant-collapse-header
+        > .ant-collapse-expand-icon {
+        margin-inline-start: 4px;
+      }
+      :where(.css-98ntnt).ant-collapse-small
+        > .ant-collapse-item
+        > .ant-collapse-content
+        > .ant-collapse-content-box {
+        padding: 12px;
+      }
+      :where(.css-98ntnt).ant-collapse-large > .ant-collapse-item {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      :where(.css-98ntnt).ant-collapse-large
+        > .ant-collapse-item
+        > .ant-collapse-header {
+        padding: 16px 24px;
+        padding-inline-start: 16px;
+      }
+      :where(.css-98ntnt).ant-collapse-large
+        > .ant-collapse-item
+        > .ant-collapse-header
+        > .ant-collapse-expand-icon {
+        height: 24px;
+        margin-inline-start: 8px;
+      }
+      :where(.css-98ntnt).ant-collapse-large
+        > .ant-collapse-item
+        > .ant-collapse-content
+        > .ant-collapse-content-box {
+        padding: 24px;
+      }
+      :where(.css-98ntnt).ant-collapse .ant-collapse-item:last-child {
+        border-bottom: 0;
+      }
+      :where(.css-98ntnt).ant-collapse
+        .ant-collapse-item:last-child
+        > .ant-collapse-content {
+        border-radius: 0 0 8px 8px;
+      }
+      :where(.css-98ntnt).ant-collapse
+        .ant-collapse-item-disabled
+        > .ant-collapse-header,
+      :where(.css-98ntnt).ant-collapse
+        .ant-collapse-item-disabled
+        > .ant-collapse-header
+        > .arrow {
+        color: rgba(0, 0, 0, 0.25);
+        cursor: not-allowed;
+      }
+      :where(.css-98ntnt).ant-collapse.ant-collapse-icon-position-end
+        > .ant-collapse-item
+        > .ant-collapse-header
+        .ant-collapse-expand-icon {
+        order: 1;
+        padding-inline-end: 0;
+        padding-inline-start: 12px;
+      }
+      :where(.css-98ntnt).ant-collapse-borderless {
+        background-color: rgba(0, 0, 0, 0.02);
+        border: 0;
+      }
+      :where(.css-98ntnt).ant-collapse-borderless > .ant-collapse-item {
+        border-bottom: 1px solid #d9d9d9;
+      }
+      :where(.css-98ntnt).ant-collapse-borderless
+        > .ant-collapse-item:last-child,
+      :where(.css-98ntnt).ant-collapse-borderless
+        > .ant-collapse-item:last-child
+        .ant-collapse-header {
+        border-radius: 0;
+      }
+      :where(.css-98ntnt).ant-collapse-borderless
+        > .ant-collapse-item:last-child {
+        border-bottom: 0;
+      }
+      :where(.css-98ntnt).ant-collapse-borderless
+        > .ant-collapse-item
+        > .ant-collapse-content {
+        background-color: transparent;
+        border-top: 0;
+      }
+      :where(.css-98ntnt).ant-collapse-borderless
+        > .ant-collapse-item
+        > .ant-collapse-content
+        > .ant-collapse-content-box {
+        padding-top: 4px;
+      }
+      :where(.css-98ntnt).ant-collapse-ghost {
+        background-color: transparent;
+        border: 0;
+      }
+      :where(.css-98ntnt).ant-collapse-ghost > .ant-collapse-item {
+        border-bottom: 0;
+      }
+      :where(.css-98ntnt).ant-collapse-ghost
+        > .ant-collapse-item
+        > .ant-collapse-content {
+        background-color: transparent;
+        border: 0;
+      }
+      :where(.css-98ntnt).ant-collapse-ghost
+        > .ant-collapse-item
+        > .ant-collapse-content
+        > .ant-collapse-content-box {
+        padding-block: 12px;
+      }
+      :where(.css-98ntnt).ant-collapse-rtl
+        > .ant-collapse-item
+        > .ant-collapse-header
+        .ant-collapse-arrow {
+        transform: rotate(180deg);
+      }
+      :where(.css-98ntnt).ant-collapse .ant-motion-collapse-legacy {
+        overflow: hidden;
+      }
+      :where(.css-98ntnt).ant-collapse .ant-motion-collapse-legacy-active {
+        transition: height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+          opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+      }
+      :where(.css-98ntnt).ant-collapse .ant-motion-collapse {
+        overflow: hidden;
+        transition: height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+          opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+      }
+    </style>
+<meta charset="utf-8" data-next-head=""/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" data-next-head="" name="viewport"/>
+<title data-next-head="">
+      전기기사실기(단답형)-기타-해설모드-단일선택모드 | 모두CBT
+    </title>
+<meta content="모두CBT는 암기장공유 서비스입니다.
+ 직업상담사2급 실기,직업상담사2급,국가고시실기시험,실기cbt,산업안전기사 실기,산업안전기사실기cbt,산업안전산업기사 실기,건설안전기사 실기, 정보처리기사 실기, 전기기사 실기, 모두시비티,모두씨비티,암기고래,암기짱,단어장,영단어어플,나눔cbt,나눔시비티,씨비티," data-next-head="" name="description"/>
+<meta content="모두CBT는 암기장공유 서비스입니다.
+ 직업상담사2급 실기,직업상담사2급,국가고시실기시험,실기cbt,산업안전기사 실기,산업안전기사실기cbt,산업안전산업기사 실기,건설안전기사 실기, 정보처리기사 실기, 전기기사 실기, 모두시비티,모두씨비티,암기고래,암기짱,단어장,영단어어플,나눔cbt,나눔시비티,씨비티," data-next-head="" property="og:description"/>
+<meta content="/png/logo01.png" data-next-head="" property="og:image"/>
+<meta content="800" data-next-head="" property="og:image:width"/>
+<meta content="800" data-next-head="" property="og:image:height"/>
+<meta content="모두CBT" data-next-head="" property="og:image:alt"/>
+<meta content="ko_KR" data-next-head="" property="og:locale"/>
+<meta content="website" data-next-head="" property="og:type"/>
+<meta content="모두CBT" data-next-head="" property="og:site_name"/>
+<meta content="산업안전기사,산업안전기사실기,건설안전기사,건선안전기사실기,실기cbt,실기씨비티,위험물산업기사,대기환경기사,모두씨비티,나눔cbt,나눔시비티,나눔씨비티,comcbt,엔지니오,모두시비티,산업안전기사필답형,건설안전기사필답형,산업안전기사실기CBT,전기기사,전기기사실기,전기기사실기CBT,전기기사실기단답형,전자문제집,모두CBT,정보처리기사,정보처리기사실기,정보처리기사실기CBT,암기장,모두의 암기장,암기고래,암기짱" data-next-head="" property="keywords"/>
+<script async="" src="https://www.clarity.ms/tag/mnhew0syru"></script>
+<script defer="" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script async="" crossorigin="anonymous" id="googleAdScript" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9145855450425143"></script>
+<link href="/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/icons/icon-192x192.png" rel="apple-touch-icon"/>
+<link href="/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<meta content="#1990ff" name="msapplication-TileColor"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/png/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link as="font" crossorigin="anonymous" data-next-font="size-adjust" href="/_next/static/media/47cbc4e2adbc5db9-s.p.woff2" rel="preload" type="font/woff2"/>
+<link as="style" href="/_next/static/css/72a7811be4459f48.css?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2" rel="preload"/>
+<link data-n-g="" href="/_next/static/css/72a7811be4459f48.css?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2" rel="stylesheet"/>
+<link as="style" href="/_next/static/css/8ce6b00bf0eb1351.css?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2" rel="preload"/>
+<link href="/_next/static/css/8ce6b00bf0eb1351.css?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2" rel="stylesheet"/>
+<link as="style" href="/_next/static/css/3cd83cfe34ca397f.css?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2" rel="preload"/>
+<noscript data-n-css=""></noscript>
+<style data-n-href="/_next/static/css/8ce6b00bf0eb1351.css?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2">
+      .ql-container .qlbt-selection-line.qlbt-selection-line-left:before {
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: #0589f3;
+        border-radius: 5px;
+      }
+      .ql-container .qlbt-selection-line.qlbt-selection-line-right:before {
+        position: absolute;
+        right: -2px;
+        bottom: -3px;
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: #0589f3;
+        border-radius: 5px;
+      }
+      .quill-better-table-wrapper {
+        overflow-x: auto;
+      }
+      table.quill-better-table {
+        table-layout: fixed;
+        border-collapse: collapse;
+      }
+      table.quill-better-table td {
+        border: 1px solid #000;
+        padding: 2px 5px;
+      }
+      .qlbt-operation-menu {
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        font-size: 14px;
+        z-index: 100;
+        overflow: hidden;
+      }
+      .qlbt-operation-menu .qlbt-operation-menu-dividing {
+        height: 1px;
+        background-color: #efefef;
+      }
+      .qlbt-operation-menu .qlbt-operation-menu-subtitle {
+        color: #999;
+        font-size: 14px;
+        padding: 5px 16px;
+      }
+      .qlbt-operation-menu .qlbt-operation-color-picker {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 16px 10px;
+        background-color: #fff;
+        overflow: hidden;
+      }
+      .qlbt-operation-menu
+        .qlbt-operation-color-picker
+        .qlbt-operation-color-picker-item {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #595959;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+      .qlbt-operation-menu .qlbt-operation-menu-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 16px;
+        background-color: #fff;
+        cursor: pointer;
+        color: #595959;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .qlbt-operation-menu .qlbt-operation-menu-item:hover {
+        background-color: #efefef;
+      }
+      .qlbt-operation-menu .qlbt-operation-menu-item .qlbt-operation-menu-icon {
+        margin-right: 8px;
+        height: 20px;
+        width: 20px;
+        font-size: 0;
+      }
+      .qlbt-col-tool {
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        z-index: 99;
+        height: 16px;
+      }
+      .qlbt-col-tool .qlbt-col-tool-cell {
+        position: relative;
+        background-color: #fff;
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+      }
+      .qlbt-col-tool .qlbt-col-tool-cell:first-child {
+        border-left: 1px solid #000;
+      }
+      .qlbt-col-tool .qlbt-col-tool-cell-holder {
+        position: absolute;
+        right: -1px;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        width: 1px;
+        background-color: transparent;
+        cursor: ew-resize;
+      }
+      .qlbt-col-tool .qlbt-col-tool-cell-holder:hover {
+        background-color: #0589f3;
+      }
+      .qlbt-col-tool .qlbt-col-tool-cell-holder:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -6px;
+        display: block;
+        width: 8px;
+        height: 100%;
+      }
+      .qlbt-col-tool .qlbt-col-tool-cell-holder:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -6px;
+        display: block;
+        width: 8px;
+        height: 100%;
+      }
+
+      /*!
+ * Quill Editor v1.3.7
+ * https://quilljs.com/
+ * Copyright (c) 2014, Jason Chen
+ * Copyright (c) 2013, salesforce.com
+ */
+      .ql-container {
+        box-sizing: border-box;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        height: 100%;
+        margin: 0;
+        position: relative;
+      }
+      .ql-container.ql-disabled .ql-tooltip {
+        visibility: hidden;
+      }
+      .ql-container.ql-disabled .ql-editor ul[data-checked] > li:before {
+        pointer-events: none;
+      }
+      .ql-clipboard {
+        left: -100000px;
+        height: 1px;
+        overflow-y: hidden;
+        position: absolute;
+        top: 50%;
+      }
+      .ql-clipboard p {
+        margin: 0;
+        padding: 0;
+      }
+      .ql-editor {
+        box-sizing: border-box;
+        line-height: 1.42;
+        height: 100%;
+        outline: none;
+        overflow-y: auto;
+        padding: 12px 15px;
+        tab-size: 4;
+        -moz-tab-size: 4;
+        text-align: left;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+      .ql-editor > * {
+        cursor: text;
+      }
+      .ql-editor blockquote,
+      .ql-editor h1,
+      .ql-editor h2,
+      .ql-editor h3,
+      .ql-editor h4,
+      .ql-editor h5,
+      .ql-editor h6,
+      .ql-editor ol,
+      .ql-editor p,
+      .ql-editor pre,
+      .ql-editor ul {
+        margin: 0;
+        padding: 0;
+        counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8
+          list-9;
+      }
+      .ql-editor ol,
+      .ql-editor ul {
+        padding-left: 1.5em;
+      }
+      .ql-editor ol > li,
+      .ql-editor ul > li {
+        list-style-type: none;
+      }
+      .ql-editor ul > li:before {
+        content: "\2022";
+      }
+      .ql-editor ul[data-checked="false"],
+      .ql-editor ul[data-checked="true"] {
+        pointer-events: none;
+      }
+      .ql-editor ul[data-checked="false"] > li *,
+      .ql-editor ul[data-checked="true"] > li * {
+        pointer-events: all;
+      }
+      .ql-editor ul[data-checked="false"] > li:before,
+      .ql-editor ul[data-checked="true"] > li:before {
+        color: #777;
+        cursor: pointer;
+        pointer-events: all;
+      }
+      .ql-editor ul[data-checked="true"] > li:before {
+        content: "\2611";
+      }
+      .ql-editor ul[data-checked="false"] > li:before {
+        content: "\2610";
+      }
+      .ql-editor li:before {
+        display: inline-block;
+        white-space: nowrap;
+        width: 1.2em;
+      }
+      .ql-editor li:not(.ql-direction-rtl):before {
+        margin-left: -1.5em;
+        margin-right: 0.3em;
+        text-align: right;
+      }
+      .ql-editor li.ql-direction-rtl:before {
+        margin-left: 0.3em;
+        margin-right: -1.5em;
+      }
+      .ql-editor ol li:not(.ql-direction-rtl),
+      .ql-editor ul li:not(.ql-direction-rtl) {
+        padding-left: 1.5em;
+      }
+      .ql-editor ol li.ql-direction-rtl,
+      .ql-editor ul li.ql-direction-rtl {
+        padding-right: 1.5em;
+      }
+      .ql-editor ol li {
+        counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8
+          list-9;
+        counter-increment: list-0;
+      }
+      .ql-editor ol li:before {
+        content: counter(list-0, decimal) ". ";
+      }
+      .ql-editor ol li.ql-indent-1 {
+        counter-increment: list-1;
+      }
+      .ql-editor ol li.ql-indent-1:before {
+        content: counter(list-1, lower-alpha) ". ";
+      }
+      .ql-editor ol li.ql-indent-1 {
+        counter-reset: list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+      }
+      .ql-editor ol li.ql-indent-2 {
+        counter-increment: list-2;
+      }
+      .ql-editor ol li.ql-indent-2:before {
+        content: counter(list-2, lower-roman) ". ";
+      }
+      .ql-editor ol li.ql-indent-2 {
+        counter-reset: list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+      }
+      .ql-editor ol li.ql-indent-3 {
+        counter-increment: list-3;
+      }
+      .ql-editor ol li.ql-indent-3:before {
+        content: counter(list-3, decimal) ". ";
+      }
+      .ql-editor ol li.ql-indent-3 {
+        counter-reset: list-4 list-5 list-6 list-7 list-8 list-9;
+      }
+      .ql-editor ol li.ql-indent-4 {
+        counter-increment: list-4;
+      }
+      .ql-editor ol li.ql-indent-4:before {
+        content: counter(list-4, lower-alpha) ". ";
+      }
+      .ql-editor ol li.ql-indent-4 {
+        counter-reset: list-5 list-6 list-7 list-8 list-9;
+      }
+      .ql-editor ol li.ql-indent-5 {
+        counter-increment: list-5;
+      }
+      .ql-editor ol li.ql-indent-5:before {
+        content: counter(list-5, lower-roman) ". ";
+      }
+      .ql-editor ol li.ql-indent-5 {
+        counter-reset: list-6 list-7 list-8 list-9;
+      }
+      .ql-editor ol li.ql-indent-6 {
+        counter-increment: list-6;
+      }
+      .ql-editor ol li.ql-indent-6:before {
+        content: counter(list-6, decimal) ". ";
+      }
+      .ql-editor ol li.ql-indent-6 {
+        counter-reset: list-7 list-8 list-9;
+      }
+      .ql-editor ol li.ql-indent-7 {
+        counter-increment: list-7;
+      }
+      .ql-editor ol li.ql-indent-7:before {
+        content: counter(list-7, lower-alpha) ". ";
+      }
+      .ql-editor ol li.ql-indent-7 {
+        counter-reset: list-8 list-9;
+      }
+      .ql-editor ol li.ql-indent-8 {
+        counter-increment: list-8;
+      }
+      .ql-editor ol li.ql-indent-8:before {
+        content: counter(list-8, lower-roman) ". ";
+      }
+      .ql-editor ol li.ql-indent-8 {
+        counter-reset: list-9;
+      }
+      .ql-editor ol li.ql-indent-9 {
+        counter-increment: list-9;
+      }
+      .ql-editor ol li.ql-indent-9:before {
+        content: counter(list-9, decimal) ". ";
+      }
+      .ql-editor .ql-indent-1:not(.ql-direction-rtl) {
+        padding-left: 3em;
+      }
+      .ql-editor li.ql-indent-1:not(.ql-direction-rtl) {
+        padding-left: 4.5em;
+      }
+      .ql-editor .ql-indent-1.ql-direction-rtl.ql-align-right {
+        padding-right: 3em;
+      }
+      .ql-editor li.ql-indent-1.ql-direction-rtl.ql-align-right {
+        padding-right: 4.5em;
+      }
+      .ql-editor .ql-indent-2:not(.ql-direction-rtl) {
+        padding-left: 6em;
+      }
+      .ql-editor li.ql-indent-2:not(.ql-direction-rtl) {
+        padding-left: 7.5em;
+      }
+      .ql-editor .ql-indent-2.ql-direction-rtl.ql-align-right {
+        padding-right: 6em;
+      }
+      .ql-editor li.ql-indent-2.ql-direction-rtl.ql-align-right {
+        padding-right: 7.5em;
+      }
+      .ql-editor .ql-indent-3:not(.ql-direction-rtl) {
+        padding-left: 9em;
+      }
+      .ql-editor li.ql-indent-3:not(.ql-direction-rtl) {
+        padding-left: 10.5em;
+      }
+      .ql-editor .ql-indent-3.ql-direction-rtl.ql-align-right {
+        padding-right: 9em;
+      }
+      .ql-editor li.ql-indent-3.ql-direction-rtl.ql-align-right {
+        padding-right: 10.5em;
+      }
+      .ql-editor .ql-indent-4:not(.ql-direction-rtl) {
+        padding-left: 12em;
+      }
+      .ql-editor li.ql-indent-4:not(.ql-direction-rtl) {
+        padding-left: 13.5em;
+      }
+      .ql-editor .ql-indent-4.ql-direction-rtl.ql-align-right {
+        padding-right: 12em;
+      }
+      .ql-editor li.ql-indent-4.ql-direction-rtl.ql-align-right {
+        padding-right: 13.5em;
+      }
+      .ql-editor .ql-indent-5:not(.ql-direction-rtl) {
+        padding-left: 15em;
+      }
+      .ql-editor li.ql-indent-5:not(.ql-direction-rtl) {
+        padding-left: 16.5em;
+      }
+      .ql-editor .ql-indent-5.ql-direction-rtl.ql-align-right {
+        padding-right: 15em;
+      }
+      .ql-editor li.ql-indent-5.ql-direction-rtl.ql-align-right {
+        padding-right: 16.5em;
+      }
+      .ql-editor .ql-indent-6:not(.ql-direction-rtl) {
+        padding-left: 18em;
+      }
+      .ql-editor li.ql-indent-6:not(.ql-direction-rtl) {
+        padding-left: 19.5em;
+      }
+      .ql-editor .ql-indent-6.ql-direction-rtl.ql-align-right {
+        padding-right: 18em;
+      }
+      .ql-editor li.ql-indent-6.ql-direction-rtl.ql-align-right {
+        padding-right: 19.5em;
+      }
+      .ql-editor .ql-indent-7:not(.ql-direction-rtl) {
+        padding-left: 21em;
+      }
+      .ql-editor li.ql-indent-7:not(.ql-direction-rtl) {
+        padding-left: 22.5em;
+      }
+      .ql-editor .ql-indent-7.ql-direction-rtl.ql-align-right {
+        padding-right: 21em;
+      }
+      .ql-editor li.ql-indent-7.ql-direction-rtl.ql-align-right {
+        padding-right: 22.5em;
+      }
+      .ql-editor .ql-indent-8:not(.ql-direction-rtl) {
+        padding-left: 24em;
+      }
+      .ql-editor li.ql-indent-8:not(.ql-direction-rtl) {
+        padding-left: 25.5em;
+      }
+      .ql-editor .ql-indent-8.ql-direction-rtl.ql-align-right {
+        padding-right: 24em;
+      }
+      .ql-editor li.ql-indent-8.ql-direction-rtl.ql-align-right {
+        padding-right: 25.5em;
+      }
+      .ql-editor .ql-indent-9:not(.ql-direction-rtl) {
+        padding-left: 27em;
+      }
+      .ql-editor li.ql-indent-9:not(.ql-direction-rtl) {
+        padding-left: 28.5em;
+      }
+      .ql-editor .ql-indent-9.ql-direction-rtl.ql-align-right {
+        padding-right: 27em;
+      }
+      .ql-editor li.ql-indent-9.ql-direction-rtl.ql-align-right {
+        padding-right: 28.5em;
+      }
+      .ql-editor .ql-video {
+        display: block;
+        max-width: 100%;
+      }
+      .ql-editor .ql-video.ql-align-center {
+        margin: 0 auto;
+      }
+      .ql-editor .ql-video.ql-align-right {
+        margin: 0 0 0 auto;
+      }
+      .ql-editor .ql-bg-black {
+        background-color: #000;
+      }
+      .ql-editor .ql-bg-red {
+        background-color: #e60000;
+      }
+      .ql-editor .ql-bg-orange {
+        background-color: #f90;
+      }
+      .ql-editor .ql-bg-yellow {
+        background-color: #ff0;
+      }
+      .ql-editor .ql-bg-green {
+        background-color: #008a00;
+      }
+      .ql-editor .ql-bg-blue {
+        background-color: #06c;
+      }
+      .ql-editor .ql-bg-purple {
+        background-color: #93f;
+      }
+      .ql-editor .ql-color-white {
+        color: #fff;
+      }
+      .ql-editor .ql-color-red {
+        color: #e60000;
+      }
+      .ql-editor .ql-color-orange {
+        color: #f90;
+      }
+      .ql-editor .ql-color-yellow {
+        color: #ff0;
+      }
+      .ql-editor .ql-color-green {
+        color: #008a00;
+      }
+      .ql-editor .ql-color-blue {
+        color: #06c;
+      }
+      .ql-editor .ql-color-purple {
+        color: #93f;
+      }
+      .ql-editor .ql-font-serif {
+        font-family: Georgia, Times New Roman, serif;
+      }
+      .ql-editor .ql-font-monospace {
+        font-family: Monaco, Courier New, monospace;
+      }
+      .ql-editor .ql-size-small {
+        font-size: 0.75em;
+      }
+      .ql-editor .ql-size-large {
+        font-size: 1.5em;
+      }
+      .ql-editor .ql-size-huge {
+        font-size: 2.5em;
+      }
+      .ql-editor .ql-direction-rtl {
+        direction: rtl;
+        text-align: inherit;
+      }
+      .ql-editor .ql-align-center {
+        text-align: center;
+      }
+      .ql-editor .ql-align-justify {
+        text-align: justify;
+      }
+      .ql-editor .ql-align-right {
+        text-align: right;
+      }
+      .ql-editor.ql-blank:before {
+        color: rgba(0, 0, 0, 0.6);
+        content: attr(data-placeholder);
+        font-style: italic;
+        left: 15px;
+        pointer-events: none;
+        position: absolute;
+        right: 15px;
+      }
+      .ql-snow .ql-toolbar:after,
+      .ql-snow.ql-toolbar:after {
+        clear: both;
+        content: "";
+        display: table;
+      }
+      .ql-snow .ql-toolbar button,
+      .ql-snow.ql-toolbar button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        height: 24px;
+        padding: 3px 5px;
+        width: 28px;
+      }
+      .ql-snow .ql-toolbar button svg,
+      .ql-snow.ql-toolbar button svg {
+        height: 100%;
+      }
+      .ql-snow .ql-toolbar button:active:hover,
+      .ql-snow.ql-toolbar button:active:hover {
+        outline: none;
+      }
+      .ql-snow .ql-toolbar input.ql-image[type="file"],
+      .ql-snow.ql-toolbar input.ql-image[type="file"] {
+        display: none;
+      }
+      .ql-snow .ql-toolbar .ql-picker-item.ql-selected,
+      .ql-snow .ql-toolbar .ql-picker-item:hover,
+      .ql-snow .ql-toolbar .ql-picker-label.ql-active,
+      .ql-snow .ql-toolbar .ql-picker-label:hover,
+      .ql-snow .ql-toolbar button.ql-active,
+      .ql-snow .ql-toolbar button:focus,
+      .ql-snow .ql-toolbar button:hover,
+      .ql-snow.ql-toolbar .ql-picker-item.ql-selected,
+      .ql-snow.ql-toolbar .ql-picker-item:hover,
+      .ql-snow.ql-toolbar .ql-picker-label.ql-active,
+      .ql-snow.ql-toolbar .ql-picker-label:hover,
+      .ql-snow.ql-toolbar button.ql-active,
+      .ql-snow.ql-toolbar button:focus,
+      .ql-snow.ql-toolbar button:hover {
+        color: #06c;
+      }
+      .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+      .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill,
+      .ql-snow .ql-toolbar .ql-picker-item:hover .ql-fill,
+      .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+      .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-fill,
+      .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+      .ql-snow .ql-toolbar .ql-picker-label:hover .ql-fill,
+      .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+      .ql-snow .ql-toolbar button.ql-active .ql-fill,
+      .ql-snow .ql-toolbar button.ql-active .ql-stroke.ql-fill,
+      .ql-snow .ql-toolbar button:focus .ql-fill,
+      .ql-snow .ql-toolbar button:focus .ql-stroke.ql-fill,
+      .ql-snow .ql-toolbar button:hover .ql-fill,
+      .ql-snow .ql-toolbar button:hover .ql-stroke.ql-fill,
+      .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+      .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill,
+      .ql-snow.ql-toolbar .ql-picker-item:hover .ql-fill,
+      .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+      .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-fill,
+      .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+      .ql-snow.ql-toolbar .ql-picker-label:hover .ql-fill,
+      .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+      .ql-snow.ql-toolbar button.ql-active .ql-fill,
+      .ql-snow.ql-toolbar button.ql-active .ql-stroke.ql-fill,
+      .ql-snow.ql-toolbar button:focus .ql-fill,
+      .ql-snow.ql-toolbar button:focus .ql-stroke.ql-fill,
+      .ql-snow.ql-toolbar button:hover .ql-fill,
+      .ql-snow.ql-toolbar button:hover .ql-stroke.ql-fill {
+        fill: #06c;
+      }
+      .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+      .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter,
+      .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke,
+      .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
+      .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+      .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,
+      .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke,
+      .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-miter,
+      .ql-snow .ql-toolbar button.ql-active .ql-stroke,
+      .ql-snow .ql-toolbar button.ql-active .ql-stroke-miter,
+      .ql-snow .ql-toolbar button:focus .ql-stroke,
+      .ql-snow .ql-toolbar button:focus .ql-stroke-miter,
+      .ql-snow .ql-toolbar button:hover .ql-stroke,
+      .ql-snow .ql-toolbar button:hover .ql-stroke-miter,
+      .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+      .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter,
+      .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke,
+      .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
+      .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+      .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,
+      .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke,
+      .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-miter,
+      .ql-snow.ql-toolbar button.ql-active .ql-stroke,
+      .ql-snow.ql-toolbar button.ql-active .ql-stroke-miter,
+      .ql-snow.ql-toolbar button:focus .ql-stroke,
+      .ql-snow.ql-toolbar button:focus .ql-stroke-miter,
+      .ql-snow.ql-toolbar button:hover .ql-stroke,
+      .ql-snow.ql-toolbar button:hover .ql-stroke-miter {
+        stroke: #06c;
+      }
+      @media (pointer: coarse) {
+        .ql-snow .ql-toolbar button:hover:not(.ql-active),
+        .ql-snow.ql-toolbar button:hover:not(.ql-active) {
+          color: #444;
+        }
+        .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-fill,
+        .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-stroke.ql-fill,
+        .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-fill,
+        .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke.ql-fill {
+          fill: #444;
+        }
+        .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-stroke,
+        .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-stroke-miter,
+        .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke,
+        .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke-miter {
+          stroke: #444;
+        }
+      }
+      .ql-snow,
+      .ql-snow * {
+        box-sizing: border-box;
+      }
+      .ql-snow .ql-hidden {
+        display: none;
+      }
+      .ql-snow .ql-out-bottom,
+      .ql-snow .ql-out-top {
+        visibility: hidden;
+      }
+      .ql-snow .ql-tooltip {
+        position: absolute;
+        transform: translateY(10px);
+      }
+      .ql-snow .ql-tooltip a {
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .ql-snow .ql-tooltip.ql-flip {
+        transform: translateY(-10px);
+      }
+      .ql-snow .ql-formats {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .ql-snow .ql-formats:after {
+        clear: both;
+        content: "";
+        display: table;
+      }
+      .ql-snow .ql-stroke {
+        fill: none;
+        stroke: #444;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+      }
+      .ql-snow .ql-stroke-miter {
+        fill: none;
+        stroke: #444;
+        stroke-miterlimit: 10;
+        stroke-width: 2;
+      }
+      .ql-snow .ql-fill,
+      .ql-snow .ql-stroke.ql-fill {
+        fill: #444;
+      }
+      .ql-snow .ql-empty {
+        fill: none;
+      }
+      .ql-snow .ql-even {
+        fill-rule: evenodd;
+      }
+      .ql-snow .ql-stroke.ql-thin,
+      .ql-snow .ql-thin {
+        stroke-width: 1;
+      }
+      .ql-snow .ql-transparent {
+        opacity: 0.4;
+      }
+      .ql-snow .ql-direction svg:last-child {
+        display: none;
+      }
+      .ql-snow .ql-direction.ql-active svg:last-child {
+        display: inline;
+      }
+      .ql-snow .ql-direction.ql-active svg:first-child {
+        display: none;
+      }
+      .ql-snow .ql-editor h1 {
+        font-size: 2em;
+      }
+      .ql-snow .ql-editor h2 {
+        font-size: 1.5em;
+      }
+      .ql-snow .ql-editor h3 {
+        font-size: 1.17em;
+      }
+      .ql-snow .ql-editor h4 {
+        font-size: 1em;
+      }
+      .ql-snow .ql-editor h5 {
+        font-size: 0.83em;
+      }
+      .ql-snow .ql-editor h6 {
+        font-size: 0.67em;
+      }
+      .ql-snow .ql-editor a {
+        text-decoration: underline;
+      }
+      .ql-snow .ql-editor blockquote {
+        border-left: 4px solid #ccc;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding-left: 16px;
+      }
+      .ql-snow .ql-editor code,
+      .ql-snow .ql-editor pre {
+        background-color: #f0f0f0;
+        border-radius: 3px;
+      }
+      .ql-snow .ql-editor pre {
+        white-space: pre-wrap;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding: 5px 10px;
+      }
+      .ql-snow .ql-editor code {
+        font-size: 85%;
+        padding: 2px 4px;
+      }
+      .ql-snow .ql-editor pre.ql-syntax {
+        background-color: #23241f;
+        color: #f8f8f2;
+        overflow: visible;
+      }
+      .ql-snow .ql-editor img {
+        max-width: 100%;
+      }
+      .ql-snow .ql-picker {
+        color: #444;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 500;
+        height: 24px;
+        position: relative;
+        vertical-align: middle;
+      }
+      .ql-snow .ql-picker-label {
+        cursor: pointer;
+        display: inline-block;
+        height: 100%;
+        padding-left: 8px;
+        padding-right: 2px;
+        position: relative;
+        width: 100%;
+      }
+      .ql-snow .ql-picker-label:before {
+        display: inline-block;
+        line-height: 22px;
+      }
+      .ql-snow .ql-picker-options {
+        background-color: #fff;
+        display: none;
+        min-width: 100%;
+        padding: 4px 8px;
+        position: absolute;
+        white-space: nowrap;
+      }
+      .ql-snow .ql-picker-options .ql-picker-item {
+        cursor: pointer;
+        display: block;
+        padding-bottom: 5px;
+        padding-top: 5px;
+      }
+      .ql-snow .ql-picker.ql-expanded .ql-picker-label {
+        color: #ccc;
+        z-index: 2;
+      }
+      .ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-fill {
+        fill: #ccc;
+      }
+      .ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-stroke {
+        stroke: #ccc;
+      }
+      .ql-snow .ql-picker.ql-expanded .ql-picker-options {
+        display: block;
+        margin-top: -1px;
+        top: 100%;
+        z-index: 1;
+      }
+      .ql-snow .ql-color-picker,
+      .ql-snow .ql-icon-picker {
+        width: 28px;
+      }
+      .ql-snow .ql-color-picker .ql-picker-label,
+      .ql-snow .ql-icon-picker .ql-picker-label {
+        padding: 2px 4px;
+      }
+      .ql-snow .ql-color-picker .ql-picker-label svg,
+      .ql-snow .ql-icon-picker .ql-picker-label svg {
+        right: 4px;
+      }
+      .ql-snow .ql-icon-picker .ql-picker-options {
+        padding: 4px 0;
+      }
+      .ql-snow .ql-icon-picker .ql-picker-item {
+        height: 24px;
+        width: 24px;
+        padding: 2px 4px;
+      }
+      .ql-snow .ql-color-picker .ql-picker-options {
+        padding: 3px 5px;
+        width: 152px;
+      }
+      .ql-snow .ql-color-picker .ql-picker-item {
+        border: 1px solid transparent;
+
+        height: 16px;
+        margin: 2px;
+        padding: 0;
+        width: 16px;
+      }
+      .ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg {
+        position: absolute;
+        margin-top: -9px;
+        right: 0;
+        top: 50%;
+        width: 18px;
+      }
+      .ql-snow
+        .ql-picker.ql-font
+        .ql-picker-item[data-label]:not([data-label=""]):before,
+      .ql-snow
+        .ql-picker.ql-font
+        .ql-picker-label[data-label]:not([data-label=""]):before,
+      .ql-snow
+        .ql-picker.ql-header
+        .ql-picker-item[data-label]:not([data-label=""]):before,
+      .ql-snow
+        .ql-picker.ql-header
+        .ql-picker-label[data-label]:not([data-label=""]):before,
+      .ql-snow
+        .ql-picker.ql-size
+        .ql-picker-item[data-label]:not([data-label=""]):before,
+      .ql-snow
+        .ql-picker.ql-size
+        .ql-picker-label[data-label]:not([data-label=""]):before {
+        content: attr(data-label);
+      }
+      .ql-snow .ql-picker.ql-header {
+        width: 98px;
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item:before,
+      .ql-snow .ql-picker.ql-header .ql-picker-label:before {
+        content: "Normal";
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]:before,
+      .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="1"]:before {
+        content: "Heading 1";
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]:before,
+      .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="2"]:before {
+        content: "Heading 2";
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"]:before,
+      .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="3"]:before {
+        content: "Heading 3";
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="4"]:before,
+      .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="4"]:before {
+        content: "Heading 4";
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="5"]:before,
+      .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="5"]:before {
+        content: "Heading 5";
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="6"]:before,
+      .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="6"]:before {
+        content: "Heading 6";
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]:before {
+        font-size: 2em;
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]:before {
+        font-size: 1.5em;
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"]:before {
+        font-size: 1.17em;
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="4"]:before {
+        font-size: 1em;
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="5"]:before {
+        font-size: 0.83em;
+      }
+      .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="6"]:before {
+        font-size: 0.67em;
+      }
+      .ql-snow .ql-picker.ql-font {
+        width: 108px;
+      }
+      .ql-snow .ql-picker.ql-font .ql-picker-item:before,
+      .ql-snow .ql-picker.ql-font .ql-picker-label:before {
+        content: "Sans Serif";
+      }
+      .ql-snow .ql-picker.ql-font .ql-picker-item[data-value="serif"]:before,
+      .ql-snow .ql-picker.ql-font .ql-picker-label[data-value="serif"]:before {
+        content: "Serif";
+      }
+      .ql-snow
+        .ql-picker.ql-font
+        .ql-picker-item[data-value="monospace"]:before,
+      .ql-snow
+        .ql-picker.ql-font
+        .ql-picker-label[data-value="monospace"]:before {
+        content: "Monospace";
+      }
+      .ql-snow .ql-picker.ql-font .ql-picker-item[data-value="serif"]:before {
+        font-family: Georgia, Times New Roman, serif;
+      }
+      .ql-snow
+        .ql-picker.ql-font
+        .ql-picker-item[data-value="monospace"]:before {
+        font-family: Monaco, Courier New, monospace;
+      }
+      .ql-snow .ql-picker.ql-size {
+        width: 98px;
+      }
+      .ql-snow .ql-picker.ql-size .ql-picker-item:before,
+      .ql-snow .ql-picker.ql-size .ql-picker-label:before {
+        content: "Normal";
+      }
+      .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="small"]:before,
+      .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="small"]:before {
+        content: "Small";
+      }
+      .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="large"]:before,
+      .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="large"]:before {
+        content: "Large";
+      }
+      .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="huge"]:before,
+      .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="huge"]:before {
+        content: "Huge";
+      }
+      .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="small"]:before {
+        font-size: 10px;
+      }
+      .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="large"]:before {
+        font-size: 18px;
+      }
+      .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="huge"]:before {
+        font-size: 32px;
+      }
+      .ql-snow .ql-color-picker.ql-background .ql-picker-item {
+        background-color: #fff;
+      }
+      .ql-snow .ql-color-picker.ql-color .ql-picker-item {
+        background-color: #000;
+      }
+      .ql-toolbar.ql-snow {
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 8px;
+      }
+      .ql-toolbar.ql-snow .ql-formats {
+        margin-right: 15px;
+      }
+      .ql-toolbar.ql-snow .ql-picker-label {
+        border: 1px solid transparent;
+      }
+      .ql-toolbar.ql-snow .ql-picker-options {
+        border: 1px solid transparent;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+      .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label,
+      .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+        border-color: #ccc;
+      }
+      .ql-toolbar.ql-snow .ql-color-picker .ql-picker-item.ql-selected,
+      .ql-toolbar.ql-snow .ql-color-picker .ql-picker-item:hover {
+        border-color: #000;
+      }
+      .ql-toolbar.ql-snow + .ql-container.ql-snow {
+        border-top: 0;
+      }
+      .ql-snow .ql-tooltip {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 5px #ddd;
+        color: #444;
+        padding: 5px 12px;
+        white-space: nowrap;
+      }
+      .ql-snow .ql-tooltip:before {
+        content: "Visit URL:";
+        line-height: 26px;
+        margin-right: 8px;
+      }
+      .ql-snow .ql-tooltip input[type="text"] {
+        display: none;
+        border: 1px solid #ccc;
+        font-size: 13px;
+        height: 26px;
+        margin: 0;
+        padding: 3px 5px;
+        width: 170px;
+      }
+      .ql-snow .ql-tooltip a.ql-preview {
+        display: inline-block;
+        max-width: 200px;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        vertical-align: top;
+      }
+      .ql-snow .ql-tooltip a.ql-action:after {
+        border-right: 1px solid #ccc;
+        content: "Edit";
+        margin-left: 16px;
+        padding-right: 8px;
+      }
+      .ql-snow .ql-tooltip a.ql-remove:before {
+        content: "Remove";
+        margin-left: 8px;
+      }
+      .ql-snow .ql-tooltip a {
+        line-height: 26px;
+      }
+      .ql-snow .ql-tooltip.ql-editing a.ql-preview,
+      .ql-snow .ql-tooltip.ql-editing a.ql-remove {
+        display: none;
+      }
+      .ql-snow .ql-tooltip.ql-editing input[type="text"] {
+        display: inline-block;
+      }
+      .ql-snow .ql-tooltip.ql-editing a.ql-action:after {
+        border-right: 0;
+        content: "Save";
+        padding-right: 0;
+      }
+      .ql-snow .ql-tooltip[data-mode="link"]:before {
+        content: "Enter link:";
+      }
+      .ql-snow .ql-tooltip[data-mode="formula"]:before {
+        content: "Enter formula:";
+      }
+      .ql-snow .ql-tooltip[data-mode="video"]:before {
+        content: "Enter video:";
+      }
+      .ql-snow a {
+        color: #06c;
+      }
+      .ql-container.ql-snow {
+        border: 1px solid #ccc;
+      }
+    </style>
+<style data-n-href="/_next/static/css/3cd83cfe34ca397f.css?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2">
+      @font-face {
+        font-family: swiper-icons;
+        src: url("data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA");
+        font-weight: 400;
+        font-style: normal;
+      }
+      :root {
+        --swiper-theme-color: #007aff;
+      }
+      :host {
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+      }
+      .swiper {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        overflow: hidden;
+        list-style: none;
+        padding: 0;
+        z-index: 1;
+        display: block;
+      }
+      .swiper-vertical > .swiper-wrapper {
+        flex-direction: column;
+      }
+      .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        transition-property: transform;
+        transition-timing-function: var(
+          --swiper-wrapper-transition-timing-function,
+          initial
+        );
+        box-sizing: content-box;
+      }
+      .swiper-android .swiper-slide,
+      .swiper-ios .swiper-slide,
+      .swiper-wrapper {
+        transform: translateZ(0);
+      }
+      .swiper-horizontal {
+        touch-action: pan-y;
+      }
+      .swiper-vertical {
+        touch-action: pan-x;
+      }
+      .swiper-slide {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition-property: transform;
+        display: block;
+      }
+      .swiper-slide-invisible-blank {
+        visibility: hidden;
+      }
+      .swiper-autoheight,
+      .swiper-autoheight .swiper-slide {
+        height: auto;
+      }
+      .swiper-autoheight .swiper-wrapper {
+        align-items: flex-start;
+        transition-property: transform, height;
+      }
+      .swiper-backface-hidden .swiper-slide {
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      .swiper-3d.swiper-css-mode .swiper-wrapper {
+        perspective: 1200px;
+      }
+      .swiper-3d .swiper-wrapper {
+        transform-style: preserve-3d;
+      }
+      .swiper-3d {
+        perspective: 1200px;
+      }
+      .swiper-3d .swiper-cube-shadow,
+      .swiper-3d .swiper-slide {
+        transform-style: preserve-3d;
+      }
+      .swiper-css-mode > .swiper-wrapper {
+        overflow: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .swiper-css-mode > .swiper-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+      .swiper-css-mode > .swiper-wrapper > .swiper-slide {
+        scroll-snap-align: start start;
+      }
+      .swiper-css-mode.swiper-horizontal > .swiper-wrapper {
+        scroll-snap-type: x mandatory;
+      }
+      .swiper-css-mode.swiper-vertical > .swiper-wrapper {
+        scroll-snap-type: y mandatory;
+      }
+      .swiper-css-mode.swiper-free-mode > .swiper-wrapper {
+        scroll-snap-type: none;
+      }
+      .swiper-css-mode.swiper-free-mode > .swiper-wrapper > .swiper-slide {
+        scroll-snap-align: none;
+      }
+      .swiper-css-mode.swiper-centered > .swiper-wrapper:before {
+        content: "";
+        flex-shrink: 0;
+        order: 9999;
+      }
+      .swiper-css-mode.swiper-centered > .swiper-wrapper > .swiper-slide {
+        scroll-snap-align: center center;
+        scroll-snap-stop: always;
+      }
+      .swiper-css-mode.swiper-centered.swiper-horizontal
+        > .swiper-wrapper
+        > .swiper-slide:first-child {
+        margin-inline-start: var(--swiper-centered-offset-before);
+      }
+      .swiper-css-mode.swiper-centered.swiper-horizontal
+        > .swiper-wrapper:before {
+        height: 100%;
+        min-height: 1px;
+        width: var(--swiper-centered-offset-after);
+      }
+      .swiper-css-mode.swiper-centered.swiper-vertical
+        > .swiper-wrapper
+        > .swiper-slide:first-child {
+        margin-block-start: var(--swiper-centered-offset-before);
+      }
+      .swiper-css-mode.swiper-centered.swiper-vertical
+        > .swiper-wrapper:before {
+        width: 100%;
+        min-width: 1px;
+        height: var(--swiper-centered-offset-after);
+      }
+      .swiper-3d .swiper-slide-shadow,
+      .swiper-3d .swiper-slide-shadow-bottom,
+      .swiper-3d .swiper-slide-shadow-left,
+      .swiper-3d .swiper-slide-shadow-right,
+      .swiper-3d .swiper-slide-shadow-top {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+      }
+      .swiper-3d .swiper-slide-shadow {
+        background: rgba(0, 0, 0, 0.15);
+      }
+      .swiper-3d .swiper-slide-shadow-left {
+        background-image: linear-gradient(
+          270deg,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .swiper-3d .swiper-slide-shadow-right {
+        background-image: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .swiper-3d .swiper-slide-shadow-top {
+        background-image: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .swiper-3d .swiper-slide-shadow-bottom {
+        background-image: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .swiper-lazy-preloader {
+        width: 42px;
+        height: 42px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -21px;
+        margin-top: -21px;
+        z-index: 10;
+        transform-origin: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 4px solid
+          var(--swiper-preloader-color, var(--swiper-theme-color));
+        border-top: 4px solid transparent;
+      }
+      .swiper-watch-progress .swiper-slide-visible .swiper-lazy-preloader,
+      .swiper:not(.swiper-watch-progress) .swiper-lazy-preloader {
+        animation: swiper-preloader-spin 1s linear infinite;
+      }
+      .swiper-lazy-preloader-white {
+        --swiper-preloader-color: #fff;
+      }
+      .swiper-lazy-preloader-black {
+        --swiper-preloader-color: #000;
+      }
+      @keyframes swiper-preloader-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+<script defer="" nomodule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/webpack-ef70ae35f322fbea.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/framework-bbeeca9707659ffa.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/main-db4bb4fd003152dc.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/pages/_app-202094dd6a22f4a1.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/3431-df32f975198372e5.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/9942-a4c939a45c689a80.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/4829-8d0ac3476e1e1007.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/655-80834e57471d8c6c.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/4748-05d76ea8ed80aa73.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/7893-3e6549489b266df4.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/5265-0a8cf9ed54142f95.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/4254-12d31b762b63e953.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/6958-b655c5deb93e59b3.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/4812-ddccd0a80cb7622d.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/3753-1cd56ff45372e790.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/3563-ff839a53ceff35af.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/232-5f67522b6ac11cc5.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/9550-f3973214cf478739.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/8681-6b6323a40dcdebd1.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/3484-3cbd4f76fd1b44b5.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/2894-8b11504b3b9fab64.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/7430-d88a528e5aab03b9.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/1634-60d46e671ccb1ab3.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/5443-3e3595d632df9cff.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/4016-193aea95e08177d2.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/9902-f7810998116f104c.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/chunks/pages/study-6bc7d22435ea48a1.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/VA97j6I6ITEVeTOyTSquh/_buildManifest.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<script defer="" src="/_next/static/VA97j6I6ITEVeTOyTSquh/_ssgManifest.js?dpl=dpl_A5bWk63EzRkqZRCrVLtBVwPtZSa2"></script>
+<style data-styled="active" data-styled-version="6.1.19"></style>
+<style>
+      :where(.css-98ntnt) a {
+        color: #1677ff;
+        text-decoration: none;
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+        transition: color 0.3s;
+        -webkit-text-decoration-skip: objects;
+      }
+      :where(.css-98ntnt) a:hover {
+        color: #69b1ff;
+      }
+      :where(.css-98ntnt) a:active {
+        color: #0958d9;
+      }
+      :where(.css-98ntnt) a:active,
+      :where(.css-98ntnt) a:hover {
+        text-decoration: none;
+        outline: 0;
+      }
+      :where(.css-98ntnt) a:focus {
+        text-decoration: none;
+        outline: 0;
+      }
+      :where(.css-98ntnt) a[disabled] {
+        color: rgba(0, 0, 0, 0.25);
+        cursor: not-allowed;
+      }
+      :where(.css-98ntnt).ant-app {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-app::before,
+      :where(.css-98ntnt).ant-app::after {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-app [class^="ant-app"],
+      :where(.css-98ntnt).ant-app [class*=" ant-app"] {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-app [class^="ant-app"]::before,
+      :where(.css-98ntnt).ant-app [class*=" ant-app"]::before,
+      :where(.css-98ntnt).ant-app [class^="ant-app"]::after,
+      :where(.css-98ntnt).ant-app [class*=" ant-app"]::after {
+        box-sizing: border-box;
+      }
+      :where(.css-98ntnt).ant-app {
+        color: rgba(0, 0, 0, 0.88);
+        font-size: 14px;
+        line-height: 1.5714285714285714;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      .anticon {
+        display: inline-flex;
+        align-items: center;
+        color: inherit;
+        font-style: normal;
+        line-height: 0;
+        text-align: center;
+        text-transform: none;
+        vertical-align: -0.125em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .anticon > * {
+        line-height: 1;
+      }
+      .anticon svg {
+        display: inline-block;
+      }
+      .anticon .anticon .anticon-icon {
+        display: block;
+      }
+      .data-ant-cssinjs-cache-path {
+        content: "8a1xef|Shared|ant:1nik7cv;8a1xef|ant-design-icons|anticon:bxdnt9;8a1xef|App-App|ant-app|anticon:10kxcc1";
+      }
+    </style>
+<style data-emotion="css vubbuv" data-s="">
+      .css-vubbuv {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        fill: currentColor;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        font-size: 1.5rem;
+      }
+    </style>
+<meta content="https://www.moducbt.com/study?mode=solution&amp;examId=43&amp;categoryId=3" data-next-head="" property="og:url"/>
+<meta content="전기기사실기(단답형)-기타-해설모드-단일선택모드 | 모두CBT" data-next-head="" property="og:title"/>
+</head>
+<body>
+<div id="__next">
+<div class="css-98ntnt ant-app theme-provider-wrapper">
+<div class="sc-4a5d71e-0 glqLqF" mode="light">
+<main class="__className_372368">
+<h1 class="hidden-title">모두CBT | 국가고시 실기시험 부시기!</h1>
+
+<div class="sc-bf5ecd73-0 fbXnoX">
+<div class="study-component-wrapper">
+<div class="sc-2f398427-0 eWtopT">
+<svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium study-header-close-button css-vubbuv" data-testid="CloseOutlinedIcon" focusable="false" role="button" viewbox="0 0 24 24">
+<path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+</svg>
+</div>
+<div class="sc-c9546484-0 dfbzMv">
+<div class="solution-mode-body">
+
+<ul class="solution-mode-solution-card-list">
+</br><div class="sc-16793137-0 hRmRR" id="question-0">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r4:">
+                                태양광 발전기의 장점
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r5:">
+                                  1) 태양이 있는곳이면 어느곳이나 설치 가능 2)
+                                  보수가 용이 3) 규모에관계가 없다 4) 산란광도
+                                  이용이 가능
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-1">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":ra:">
+                                태양광 발전기의 단점
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":rb:">
+                                  1) 흐린날씨에는 발전능력이 저하 2) 태양광의
+                                  에너지밀도가 낮다
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-2">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":rg:">
+                                풍력발전 시스템의 특징
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":rh:">
+                                  1) 무공해 청정에너지 이다 2) 부지롤 효율적으로
+                                  이용할 수 있다 3) 화석연료를 대신해 자원고갈에
+                                  대비할 수 있다 4) 운전 및 유지비용이 절감된다
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-3">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":rm:">
+                                발전기 병렬운전 조건
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":rn:">
+                                  1) 기전력의 크기가 같을것 2) 기전력의 위상이
+                                  같을것 3) 기전력의 주파수가 같을것 4) 기전력의
+                                  파형이 같을것 5) 기전력의 상회전 방항이 같을것
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-4">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":rs:">
+                                동기 발전기 병렬운전시 생기는 횡류에대해
+                                서술하시오
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":rt:">
+                                  1) 고조파 무효순환 전류 - 전기자 권선의
+                                  저항손이 증가하여 과열의 원인이 된다 2) 동기화
+                                  전류 - 병렬 운전중인 발전기의 위상을 동기화
+                                  한다(같게 한다) 3) 무효순환 전류 - 병렬
+                                  운전중인 발전기의 전압을 동기화 한다(같게
+                                  한다)
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-5">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r12:">
+                                단락비가 큰 교류발전기는 기계의 치수가 ( ),
+                                가격이 ( )， 풍손·마찰손·철손이 ( ), 효율은 ( ),
+                                전압변동율은 ( ), 안정도는 ( )
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r13:">
+                                  단락비가 큰 교류발전기는 기계의 치수가 ( 크고
+                                  ), 가격이 ( 높고 )， 풍손·마찰손·철손이 ( 크고
+                                  ), 효율은 ( 낮고 ), 전압변동율은 ( 적고 ),
+                                  안정도는 ( 크다 )
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-6">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r18:">
+                                일반용 및 자가용 전기설비의 과전류 종류에 대해
+                                쓰시오.
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r19:">
+                                  1) 단락전류: @ 단락회로에 흐르는 전류 @ 갑자기
+                                  단락(합선)시켰을 때 그 순간에 흐르는 큰 전류
+                                  2) 과부하 전류 : 전기기기는 정격전류, 전선은
+                                  허용전류를 어느정도 초과한 상태가 지속될 때
+                                  전기기기 또는 전선의 손상방지를 위해
+                                  자동차단을 필요로 하는 전류
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-7">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r1e:">
+                                단상부하 1 개의 경우는 ( ) 단상부하 2 개의
+                                경우는 ( ) 단상부하 3 개 이상인 경우는 가급적
+                                선로전류가 ( )
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r1f:">
+                                  단상부하 1 개의 경우는 ( 2차 역V결선 )
+                                  단상부하 2 개의 경우는 ( 스코트 결선 )
+                                  단상부하 3 개 이상인 경우는 가급적 선로전류가
+                                  ( 평형)
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-8">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r1k:">
+                                물을 사용하는 장소에 콘센트를 설치하는 경우 저압
+                                차단기의 정확한 명칭은?
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r1l:">
+                                  인체 감전보호용 누전차단기(정격 감도전류
+                                  15[mA] 이하)
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-9">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r1q:">
+                                변류기 1 차측에 전류가 흐르는 상태에서 2 차측을
+                                개방하면 어떤 문제점이 생기는가?
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r1r:">
+                                  1) 2 차축 과전압 유기 2) 2 차측 절연파괴
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-10">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r20:">
+                                보호선종류
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r21:">
+                                  1) 고정배선의 나전선 또는 절연전선 2) 다심
+                                  케이블의 전선
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-11">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r26:">
+                                전력설비 점검시 보호계전 계통의 오동작 원인
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r27:">
+                                  1) 높은 습도에 의한 절연성능 저하 및 부식 2)
+                                  보호계전기의 허용범위를 초과한 온도 3)
+                                  진동·충격
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-12">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r2c:">
+                                1선지락시 집지개통별 고장전류의 경로 1) 단일
+                                접지계통 : ? 2) 중성점 접지계통 : ? 3) 다중
+                                접지계통 : ?
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r2d:">
+                                  1) 단일 접지계통 : 선로 - 지락점 - 대지 -
+                                  접지점 - 중성점 - 선로 2) 중성점 접지계통 :
+                                  선로 - 지락점 - 대지 - 접지점 - 중성점 - 선로
+                                  3) 다중 접지계통 : 선로 - 지락점 - 대지 -
+                                  다중접지극의 접지점 - 중성점 - 선로
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-13">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r2i:">
+                                아크를 소멸시킨후 즉시 재투입이 가능한
+                                개폐장치는 무엇인가?
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r2j:">
+                                  리클로저
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-14">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r2o:">
+                                저압 뱅킹방식의 특징
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r2p:">
+                                  1) 변압기 공급전력을 서로 융통 시킴으로써
+                                  변압기 용량을 저감할 수 있다 2) 전압변동 및
+                                  전력손실이 경감된다 3) 부하 증가에 대해
+                                  탄력성이 항상된다 4) 고장 보호방식이 적당할 때
+                                  공급신뢰도가 향상된다
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-15">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r2u:">
+                                예비전원설비가 구비해야 할 조건
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r2v:">
+                                  1) 경제적일 것 2) 비상용 부하에 적합할 것 3)
+                                  신뢰도가 높을 것 4) 조작, 취급, 운전이 쉬울 것
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-16">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r34:">
+                                변전소란?
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r35:">
+                                  전송 받은 전기를 변압기, 발전기, 정류기,
+                                  변류기 그 밖의 기계기구로 변성하는 곳으로
+                                  변성한 전기를 다시 전송하는 곳
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-17">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r3a:">
+                                개폐소란?
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r3b:">
+                                  전로를 개폐하는 곳으로 발전소, 번전소,
+                                  수용장소 이외의 곳
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-18">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r3g:">
+                                급전소란?
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r3h:">
+                                  전력계통의 운용에 관한 지시 및 급전조작을 하는
+                                  곳
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</br><div class="sc-16793137-0 hRmRR" id="question-19">
+<div class="sc-716440a9-0 ieUGRC solution-mode-question-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-a3a7fd6f-0 icbTcY">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r3m:">
+                                공사원가 계산시 비목
+                              </div>
+<div></div>
+</div>
+</div>
+</div>
+<div class="sc-716440a9-0 ieUGRC solution-mode-solution-card" type="primary">
+<div class="solution-mode-question-content-wrapper">
+<div class="sc-4c5527dd-0 gHbtte">
+<div class="study-answer-box-question-card-anwswer-wrapper">
+<div class="sc-26cd48e7-0 dAyVif" currentcolor="#FFFFA5" id=":r3n:">
+                                  1) 이윤 2) 경비 3) 재료비 4) 일반 관리비 5)
+                                  노무비
+                                </div>
+<div style="width: fit-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sc-1d5685b6-0 dybGfK">
+<div class="sc-716440a9-0 ieUGRC study-control-box" type="primary">
+<div class="study-control-box-progress-button-wrapper"></div>
+</div>
+</div>
+</div>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="sc-76079939-0 gNiUmw"><div id="portal"></div></div>
+</div>
+</div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">
+      {
+        "props": { "pageProps": {} },
+        "page": "/study",
+        "query": {},
+        "buildId": "VA97j6I6ITEVeTOyTSquh",
+        "nextExport": true,
+        "autoExport": true,
+        "isFallback": false,
+        "scriptLoader": []
+      }
+    </script>
+<script data-nscript="afterInteractive" id="clarify-script">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "mnhew0syru");
+    </script>
+<script data-nscript="afterInteractive" id="_next-ga-init">
+      window["dataLayer"] = window["dataLayer"] || [];
+      function gtag() {
+        window["dataLayer"].push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H70CXYXXT0");
+    </script>
+<script data-nscript="afterInteractive" id="_next-ga" src="https://www.googletagmanager.com/gtag/js?id=G-H70CXYXXT0"></script>
+<next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="
+          border: 0px;
+          clip: rect(0px, 0px, 0px, 0px);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0px;
+          position: absolute;
+          top: 0px;
+          width: 1px;
+          white-space: nowrap;
+          overflow-wrap: normal;
+        "></p></next-route-announcer>
+</body>
+</html>
