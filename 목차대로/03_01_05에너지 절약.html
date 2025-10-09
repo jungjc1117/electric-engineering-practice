@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .container {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100vh; /* 뷰포트 높이의 80%로 설정하여 스크롤이 생기도록 함 */
+      }
+
+      .container1 {
+        width: 80%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+      }
+
+      .container2 {
+        width: 20%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box;
+      }
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      #srcListCode {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container1">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2020_3_10.png"
+                  alt="교류 동기발전기: 단락비, 여자전류, 효율, 안정도, 철기계, 동기계"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2018_3_13.png"
+                  alt="발전기 용량 산정: 유도전동기, 효율, 역률, 입력전력, 엔진출력, 총합산정"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2018_3_03.png"
+                  alt="발전기 운전시간: 중유 발열량, 열효율, 1/2 부하, 연료량, 운전시간 계산"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2018_2_13.png"
+                  alt="최대 수요전력 억제: 피크 컷, 피크 시프트, 자가용 발전, 프로그램 제어"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2017_1_13.png"
+                  alt="동력설비 에너지 절약: 고효율 전동기, 역률 개선, VVVF 제어, 적정용량, 공조기기"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2017_1_10.png"
+                  alt="발전기 단락비와 병렬운전: 단락전류, 여자전류, 단락비, 전압변동률, 병렬운전 조건"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2016_1_12.png"
+                  alt="발전기 운전시간: 중유 발열량, 열효율, 1/2 부하, 소비연료량, 운전가능 시간"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_3_18.png"
+                  alt="발전기 횡류: 무효순환전류, 동기화전류, 고조파 순환전류, 병렬운전 조건"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_3_11.png"
+                  alt="수력발전기 용량: 유효낙차, 사용수량, 효율, 역률, 출력 계산"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_2_14.png"
+                  alt="발전기 종합효율: 출력, 운전시간, 연료 소비량, 발열량, 효율 계산"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_1_01.png"
+                  alt="발전기 단락비: 정격전압, 용량, 여자전류, 단락전류, 단락비, 전압변동률, 안정도"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2014_2_20.png"
+                  alt="발전기 용량 산정: 부하 데이터, 역률·효율, 기동용량, 순시 최대 부하, 과부하내량"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_1_15.png"
+                  alt="풍력 에너지, 풍속, 회전날개 지름, 공기 밀도"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_2_04.png"
+                  alt="전동기 정·역 운전 시퀀스 : 정회전/역회전, 인터록, 램프 점등 조건, 자기유지"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_2_05.png"
+                  alt="동력설비 에너지 절약방안 : 고효율 전동기, 역률 개선, VVVF 시스템, 적정용량 선정"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_1_20.png"
+                  alt="발전기 효율, 연료소비량, 비중, 마력, 역률"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_1_04.png"
+                  alt="디젤발전기, 효율, 출력, 연료소비량, 열량, 역률"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2009_2_15.png"
+                  alt="동기발전기 횡류	무효순환전류, 동기화전류, 고조파"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2009_2_12.png"
+                  alt="무한대 모선	내부임피던스 0, 전압 불변, 관성정수"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2008_1_08.png"
+                  alt="조명설계 에너지 절약 : 고효율 등기구, 조광제어, 고역률, 유지관리, 재실감지기"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container2">
+        <textarea id="srcList" readonly></textarea>
+        <textarea id="srcListCode" readonly></textarea>
+        <div class="button-container">
+          <button onclick="copyToClipboard()">복사</button>
+          <button onclick="clearAll()">삭제</button>
+          <button onclick="inputNumbers()">숫자기입</button>
+          <button onclick="deleteInputNumbers()">기입숫자제거</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+        let combinedContent1 = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          if (image && contentTextarea) {
+            const src = image.getAttribute("src");
+            const text = contentTextarea.value.trim();
+
+            if (text !== "") {
+              combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+              combinedContent1 += `
+            <tr>
+              <td>
+                <img
+                              <tr>
+              <td>
+                <img
+                  src="${src}"
+                  alt="${text}"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>\n`;
+            }
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+        document.getElementById("srcListCode").value = combinedContent1;
+      }
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+
+      function inputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row, index) => {
+          const indexNumber = index + 1;
+          const textarea = row.querySelector("textarea.image-content");
+          if (textarea) {
+            textarea.value = indexNumber.toString();
+          }
+        });
+      }
+
+      // 이 함수는 텍스트 영역에 순서대로 기입된 숫자만 지우고, 다른 내용이 있으면 그대로 남깁니다.
+      // 그리고 그 결과에 맞춰 srcListCode를 업데이트합니다.
+      function deleteInputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+
+        allRows.forEach((row, index) => {
+          const textarea = row.querySelector("textarea.image-content");
+
+          if (textarea) {
+            const expectedNumber = (index + 1).toString();
+            const currentValue = textarea.value.trim();
+
+            if (currentValue === expectedNumber) {
+              textarea.value = "";
+            }
+          }
+        });
+
+        // 텍스트 영역 내용 변경 후 srcListCode를 다시 생성합니다.
+        updateSrcList();
+      }
+
+      // 페이지 로드 시 모든 textarea의 placeholder를 설정하는 함수
+      window.onload = function () {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+          const label = row.querySelector("label"); // Select the <label> element
+
+          if (image && contentTextarea && label) {
+            const altText = image.getAttribute("alt");
+            contentTextarea.setAttribute("placeholder", altText); // Set the placeholder
+            label.textContent = altText; // Set the label's text content
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

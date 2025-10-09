@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .container {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100vh; /* 뷰포트 높이의 80%로 설정하여 스크롤이 생기도록 함 */
+      }
+
+      .container1 {
+        width: 80%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+      }
+
+      .container2 {
+        width: 20%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box;
+      }
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      #srcListCode {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container1">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2020_3_15.png"
+                  alt="도로 조명: 평균조도, 전광속, 조명률, 감광보상률, 도로폭"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2020_2_05.png"
+                  alt="도로 조명: 평균조도, 광속이용률, 유지율, 수은등, 전광속, 지그재그 배치"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2020_1_14.png"
+                  alt="건축화 조명: 코니스 조명, 벽면 조명, 간접조명, 설계 조화"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2020_1_07.png"
+                  alt="실지수: 실지수, 방 크기, 작업면 높이, 조명설계"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2019_3_07.png"
+                  alt="광속발산도: 반사율, 투과율, 구형 글로브, 점광원, 광속발산도"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2019_2_14.png"
+                  alt="도로 조명: 등주간격, 감광보상률, 보수율, 컷오프 조명, 눈부심 방지"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2019_1_04.png"
+                  alt="광원의 광도와 수평면 조도: 전광속, 광도, 수평면 조도, 거리, 각도, 조명계산"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2018_2_05.png"
+                  alt="조명 방식: 직접조명, 반직접조명, 전반확산조명, 반간접조명, 간접조명, 배광 방식"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2017_2_12.png"
+                  alt="실내조명 설계: 실지수, 평균조도, 광속, 조명률, 감광보상률"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2017_1_04.png"
+                  alt="수평면 조도: 광도, 조도 계산, 거리, 각도, 수평면 조도"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2017_1_02.png"
+                  alt="전등효율과 발광효율: 전등효율 η, 발광효율 ε, 광속, 방사속, 소비전력"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2016_2_10.png"
+                  alt="경제적 전구 선택: 수명, 소비전력, 평균광도, 전력요금, 전구비, 경제성 비교"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_3_06.png"
+                  alt="도로조명: 평균조도, 조명률, 감광보상률, 광속, 지그재그 배치"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_2_10.png"
+                  alt="감광보상률: 광속 감소, 노화·오손, 조명설계 여유율, 광속 보상"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_1_12.png"
+                  alt="조명 실지수: 실내 크기, 천장높이, 작업면, 조명률, 유지율, 등기구 수량"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_1_05.png"
+                  alt="조명 용어: 색온도, 연색성, 흑체온도, 분광특성, 색의 보임"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2014_2_05.png"
+                  alt="세관형 램프 (T-5): 에너지 절약, 연색성, 광속 유지율, 전자식 안정기, 고효율·장수명"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2013_3_11.png"
+                  alt="수평면 조도: 배광곡선, 광도, 입사각, 거리역제곱법칙, cos값 활용"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_2_12.png"
+                  alt="반구 램프, 광속, 휘도, 광속발산도"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2011_2_08.png"
+                  alt="조명설계와 눈부심 : 눈부심 원인, 작업 능률 저하, 고휘도, 광속 과다, 대비"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_1_08.png"
+                  alt="경제적 전등기구 선택, 소비전력, 광도, 전력요금, 수명"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_1_03.png"
+                  alt="조도 계산, 수평면 조도, 수직면 조도, 광도, 거리"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2009_2_19.png"
+                  alt="도로조명 성능	평균휘도, 눈부심, 연색성, 균제도"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2007_2_05.png"
+                  alt="배광곡선, 수평면 조도, 광도, 입사각, 거리역제곱 법칙"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2007_2_04.png"
+                  alt="적외선 전구, 가열 및 건조, 소비전력, 효율, 파장"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2006_1_01.png"
+                  alt="HID Lamp : 고휘도 방전램프, 고압 수은등, 고압 나트륨등, 메탈핼라이드 램프"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2005_2_02.png"
+                  alt="조명 깜박임 대책: 백열등은 직류, 3상은 위상 분할 혼합, 방전등은 콘덴서·코일로 위상차"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2005_2_04.png"
+                  alt="조명시설 주파수·간격: 주파수 낮추면 광속 증가·점등 지연, 등기구 간격은 S ≤ 1.5H, 벽은 S ≤ 0.5H"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2005_1_14.png"
+                  alt="접지저항 측정법, 어스테스터, 콜라우시브리지"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container2">
+        <textarea id="srcList" readonly></textarea>
+        <textarea id="srcListCode" readonly></textarea>
+        <div class="button-container">
+          <button onclick="copyToClipboard()">복사</button>
+          <button onclick="clearAll()">삭제</button>
+          <button onclick="inputNumbers()">숫자기입</button>
+          <button onclick="deleteInputNumbers()">기입숫자제거</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+        let combinedContent1 = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          if (image && contentTextarea) {
+            const src = image.getAttribute("src");
+            const text = contentTextarea.value.trim();
+
+            if (text !== "") {
+              combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+              combinedContent1 += `
+            <tr>
+              <td>
+                <img
+                              <tr>
+              <td>
+                <img
+                  src="${src}"
+                  alt="${text}"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>\n`;
+            }
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+        document.getElementById("srcListCode").value = combinedContent1;
+      }
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+
+      function inputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row, index) => {
+          const indexNumber = index + 1;
+          const textarea = row.querySelector("textarea.image-content");
+          if (textarea) {
+            textarea.value = indexNumber.toString();
+          }
+        });
+      }
+
+      // 이 함수는 텍스트 영역에 순서대로 기입된 숫자만 지우고, 다른 내용이 있으면 그대로 남깁니다.
+      // 그리고 그 결과에 맞춰 srcListCode를 업데이트합니다.
+      function deleteInputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+
+        allRows.forEach((row, index) => {
+          const textarea = row.querySelector("textarea.image-content");
+
+          if (textarea) {
+            const expectedNumber = (index + 1).toString();
+            const currentValue = textarea.value.trim();
+
+            if (currentValue === expectedNumber) {
+              textarea.value = "";
+            }
+          }
+        });
+
+        // 텍스트 영역 내용 변경 후 srcListCode를 다시 생성합니다.
+        updateSrcList();
+      }
+
+      // 페이지 로드 시 모든 textarea의 placeholder를 설정하는 함수
+      window.onload = function () {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+          const label = row.querySelector("label"); // Select the <label> element
+
+          if (image && contentTextarea && label) {
+            const altText = image.getAttribute("alt");
+            contentTextarea.setAttribute("placeholder", altText); // Set the placeholder
+            label.textContent = altText; // Set the label's text content
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

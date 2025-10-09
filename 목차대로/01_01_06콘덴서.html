@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .container {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100vh; /* 뷰포트 높이의 80%로 설정하여 스크롤이 생기도록 함 */
+      }
+
+      .container1 {
+        width: 80%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+      }
+
+      .container2 {
+        width: 20%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box;
+      }
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      #srcListCode {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container1">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2020_3_13.png"
+                  alt="콘덴서 및 역률 개선: 합성역률, 커페시터, 부하증설, 변압기 과부하"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2020_3_12.png"
+                  alt="콘덴서 자기여자 현상: 자기여자, 콘덴서 전류, 유도발전기, 단자전압 초과"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2019_3_09.png"
+                  alt="콘덴서와 직렬리액터: 제3고조파, 직렬리액터, 과도돌입전류, 정격전류, 콘덴서 회로"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2019_1_09.png"
+                  alt="역률 개선: 유도성 부하, 콘덴서, 진상전류, 무효전력, 전력손실, 요금증가"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2017_2_13.png"
+                  alt="콘덴서 직렬리액터: 고조파 억제, 제5·제3고조파, 리액터 용량, 콘덴서 비율"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2016_3_05.png"
+                  alt="역률개선 콘덴서: 부하설비 100kW, 역률 85% → 100%, 콘덴서 용량 계산, 무효전력 보상"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2016_2_12.png"
+                  alt="콘덴서 돌입전류: 제3고조파, 직렬리액터, 정격전류, 과도 돌입전류"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_3_04.png"
+                  alt="역률 과보상 부작용: 모선전압 상승, 재점호 과전압, 계전기 오동작, 자기여자, 고조파 왜곡"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2014_2_07.png"
+                  alt="전력용 콘덴서: 전력손실 경감, 전압강하 감소, 설비용량 여유, 전력요금 절감"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2014_1_21.png"
+                  alt="전력용 콘덴서 용량: 변압기 용량, 역률 개선, 유효전력 증가, 콘덴서 용량"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2014_1_03.png"
+                  alt="역률개선: 진상콘덴서, 무효전력 감소, 전류 감소, 역률 개선 효과"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2013_3_07.png"
+                  alt="콘덴서 부속설비: 방전코일, 잔류전하 방전, 직렬리액터, 제5고조파 제거, 파형 개선"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2013_1_17.png"
+                  alt="역률개선, 콘덴서, 직렬리액터, 전압강하, 설비용량"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2013_1_09.png"
+                  alt="역률개선, 콘덴서 용량, 유효전력 증가, 지상 역률"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2013_1_03.png"
+                  alt="전동기, 자기여자현상, 콘덴서, 무부하전류, 단자전압"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_2_02.png"
+                  alt="NCS, NVS, 중성점 전류/전압 검출, 콘덴서 보호"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_2_14.png"
+                  alt="직렬 리액터, 콘덴서, 리액터 용량"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_2_10.png"
+                  alt="진상용 콘덴서, 육안검사 항목"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_1_11.png"
+                  alt="콘덴서 회로, 주파수 변화, 소비전력, 역률"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_1_08.png"
+                  alt="콘덴서 용량, 접속방법, 고조파, 직렬리액터, 이격거리"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_1_06.png"
+                  alt="콘덴서 설비, 방전코일, 직렬리액터, 계전기 종류"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2011_2_09.png"
+                  alt="역률 개선 : 콘덴서 설치, 개선된 역률, 손해 요인, 방전코일, 직렬 리액터"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2011_1_02.png"
+                  alt="역률개선 콘덴서	역률, 콘덴서 용량, 부하 kVA"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_1_17.png"
+                  alt="콘덴서 사고원인, 모선단락, 층간절연, 배선단락"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2009_1_08.png"
+                  alt="진상 콘덴서 방전장치 : 방전장치, 잔류전하, 방전시간, 고압/특고압 기준"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2008_2_06.png"
+                  alt="콘덴서 용량, 역률 개선, 부하 증가, 합성역률"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2006_1_06.png"
+                  alt="고압 회로용 진상콘덴서 : 과전압 계전기 (OVR), 저전압 계전기 (UVR), 과전류 계전기 (OCR), 지락 계전기 (OVGR, OCGR)"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container2">
+        <textarea id="srcList" readonly></textarea>
+        <textarea id="srcListCode" readonly></textarea>
+        <div class="button-container">
+          <button onclick="copyToClipboard()">복사</button>
+          <button onclick="clearAll()">삭제</button>
+          <button onclick="inputNumbers()">숫자기입</button>
+          <button onclick="deleteInputNumbers()">기입숫자제거</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+        let combinedContent1 = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          if (image && contentTextarea) {
+            const src = image.getAttribute("src");
+            const text = contentTextarea.value.trim();
+
+            if (text !== "") {
+              combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+              combinedContent1 += `
+            <tr>
+              <td>
+                <img
+                              <tr>
+              <td>
+                <img
+                  src="${src}"
+                  alt="${text}"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>\n`;
+            }
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+        document.getElementById("srcListCode").value = combinedContent1;
+      }
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+
+      function inputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row, index) => {
+          const indexNumber = index + 1;
+          const textarea = row.querySelector("textarea.image-content");
+          if (textarea) {
+            textarea.value = indexNumber.toString();
+          }
+        });
+      }
+
+      // 이 함수는 텍스트 영역에 순서대로 기입된 숫자만 지우고, 다른 내용이 있으면 그대로 남깁니다.
+      // 그리고 그 결과에 맞춰 srcListCode를 업데이트합니다.
+      function deleteInputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+
+        allRows.forEach((row, index) => {
+          const textarea = row.querySelector("textarea.image-content");
+
+          if (textarea) {
+            const expectedNumber = (index + 1).toString();
+            const currentValue = textarea.value.trim();
+
+            if (currentValue === expectedNumber) {
+              textarea.value = "";
+            }
+          }
+        });
+
+        // 텍스트 영역 내용 변경 후 srcListCode를 다시 생성합니다.
+        updateSrcList();
+      }
+
+      // 페이지 로드 시 모든 textarea의 placeholder를 설정하는 함수
+      window.onload = function () {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+          const label = row.querySelector("label"); // Select the <label> element
+
+          if (image && contentTextarea && label) {
+            const altText = image.getAttribute("alt");
+            contentTextarea.setAttribute("placeholder", altText); // Set the placeholder
+            label.textContent = altText; // Set the label's text content
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

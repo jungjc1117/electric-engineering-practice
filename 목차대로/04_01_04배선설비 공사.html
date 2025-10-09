@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .container {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100vh; /* 뷰포트 높이의 80%로 설정하여 스크롤이 생기도록 함 */
+      }
+
+      .container1 {
+        width: 80%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+      }
+
+      .container2 {
+        width: 20%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box;
+      }
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      #srcListCode {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container1">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2018_1_08.png"
+                  alt="옥내배선 가닥수: 스위치 점멸, 전등 배선, 최소 가닥수, 회로 설계"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2018_1_14.png"
+                  alt="저압 접지계통: TN-C-S 방식, 접지선, 결선도, 보호접지, PEN도체"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2017_1_18.png"
+                  alt="접지설비 보호도체: PE 도체, 최소 단면적 기준, 보호선 종류, 접지 규정"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2016_1_03.png"
+                  alt="실지수와 조명률: 실지수, 조명률, 평균조도, 광속, 보수율, 등기구 수량, 소비전력량"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_3_09.png"
+                  alt="전기 방폭설비: 폭발 방지, 증기·분진, 인화 방지, 방폭구조"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2014_2_02.png"
+                  alt="방폭구조: 방폭형 전동기, 내압·유입·압력·안전증·본질안전 방폭구조, 폭발성 가스"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2013_2_03.png"
+                  alt="전선관 심벌: 전선관 종류, 심벌 해석, 도면 기호, 명칭 작성"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2013_2_04.png"
+                  alt="계통접지와 기기접지: 접지선 연결, 접지극, 보호기능, 계통접지·기기접지 구분"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_1_03.png"
+                  alt="정크션 박스, 풀박스, 배선설비, 전선관 길이"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_2_21.png"
+                  alt="금속관 부품, 로크너트, 부싱, 커플링 등"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2011_2_17.png"
+                  alt="접지시스템 및 등전위 본딩 : 접지극, 보호도체, 본딩도체, 주접지단자, 금속배관설비"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2011_2_13.png"
+                  alt="전선 가닥수 산정 : 외등 점멸, 전선 가닥수, 점멸기 기호, 결선도"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2011_1_04.png"
+                  alt="접지저항 산정	콜라우시 브리지, 접지판 저항"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_2_20.png"
+                  alt="공사시방서 : 계약문서, 시공기준, 품질/안전관리, 건설기술관리법"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_2_18.png"
+                  alt="전선 가닥수 구하기 : 독립기구 vs 공통기구, 단자수 기준, 전선 연결 방식"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_2_19.png"
+                  alt="조명설비 에너지 절약방법 : 고효율/고역률 등기구, 조광제어, 재실 감지기, 격등제어"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_1_09.png"
+                  alt="접지용구, 접지순서, 단로기, 차단기, 조작순서"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2009_2_09.png"
+                  alt="옥내배선 설비 심벌	전등, 전력, 통신, 피뢰설비"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2009_2_07.png"
+                  alt="인체 감전 정도	감지전류, 경련전류, 심실세동"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2009_1_17.png"
+                  alt="감전 위험도 결정요인 : 통전전류, 통전경로, 통전시간, 전원 종류"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2008_2_21.png"
+                  alt="옥내 저압 배선공사, 합성수지관, 금속관, 가요전선관, 케이블공사"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2008_1_14.png"
+                  alt="배전선로 색상 : L1, L2, L3, N선, 보호도체 색상"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2007_2_10.png"
+                  alt="절연협조, 절연강도, 선로애자, 피뢰기, 변압기"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_1_04.png"
+                  alt="3상 4선식, 역V결선, V결선, 중성선 접지"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_2_06.png"
+                  alt="방재용 자재, 난연테이프, 난연도료"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container2">
+        <textarea id="srcList" readonly></textarea>
+        <textarea id="srcListCode" readonly></textarea>
+        <div class="button-container">
+          <button onclick="copyToClipboard()">복사</button>
+          <button onclick="clearAll()">삭제</button>
+          <button onclick="inputNumbers()">숫자기입</button>
+          <button onclick="deleteInputNumbers()">기입숫자제거</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+        let combinedContent1 = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          if (image && contentTextarea) {
+            const src = image.getAttribute("src");
+            const text = contentTextarea.value.trim();
+
+            if (text !== "") {
+              combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+              combinedContent1 += `
+            <tr>
+              <td>
+                <img
+                              <tr>
+              <td>
+                <img
+                  src="${src}"
+                  alt="${text}"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>\n`;
+            }
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+        document.getElementById("srcListCode").value = combinedContent1;
+      }
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+
+      function inputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row, index) => {
+          const indexNumber = index + 1;
+          const textarea = row.querySelector("textarea.image-content");
+          if (textarea) {
+            textarea.value = indexNumber.toString();
+          }
+        });
+      }
+
+      // 이 함수는 텍스트 영역에 순서대로 기입된 숫자만 지우고, 다른 내용이 있으면 그대로 남깁니다.
+      // 그리고 그 결과에 맞춰 srcListCode를 업데이트합니다.
+      function deleteInputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+
+        allRows.forEach((row, index) => {
+          const textarea = row.querySelector("textarea.image-content");
+
+          if (textarea) {
+            const expectedNumber = (index + 1).toString();
+            const currentValue = textarea.value.trim();
+
+            if (currentValue === expectedNumber) {
+              textarea.value = "";
+            }
+          }
+        });
+
+        // 텍스트 영역 내용 변경 후 srcListCode를 다시 생성합니다.
+        updateSrcList();
+      }
+
+      // 페이지 로드 시 모든 textarea의 placeholder를 설정하는 함수
+      window.onload = function () {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+          const label = row.querySelector("label"); // Select the <label> element
+
+          if (image && contentTextarea && label) {
+            const altText = image.getAttribute("alt");
+            contentTextarea.setAttribute("placeholder", altText); // Set the placeholder
+            label.textContent = altText; // Set the label's text content
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

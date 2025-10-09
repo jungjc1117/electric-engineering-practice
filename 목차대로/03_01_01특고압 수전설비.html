@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .container {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100vh; /* 뷰포트 높이의 80%로 설정하여 스크롤이 생기도록 함 */
+      }
+
+      .container1 {
+        width: 80%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+      }
+
+      .container2 {
+        width: 20%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box;
+      }
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      #srcListCode {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container1">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2019_3_15.png"
+                  alt="고압 수전설비 결선도: 변류기 위치, 피뢰기 단로기, 방전코일, ZCT, TC"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2019_2_03.png"
+                  alt="수전설비 단선결선도: DS 정격전압, MOF 기능, CB 기능, LA 정격, DM, VS/AS, PF, ZCT, GR, SC, OS"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2019_1_14.png"
+                  alt="수전설비 계통도: 변류기 2차측, 단락조치, ASS, 서지흡수기, VCB, 몰드변압기"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2018_3_10.png"
+                  alt="22.9kV 수전설비 단선결선도: 피뢰기 기능, 이상전압 보호, 속류차단, 부하집계표, TR 용량 산정"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2018_2_08.png"
+                  alt="배전용 변전소 결선도: 변압기 정격, 등가임피던스, 차단기 용량, 변류기 정격, GPT, 피뢰기, 지락선택"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2017_3_13.png"
+                  alt="고압 수전설비: LA용 DS 생략, 직렬 리액터, MOF, ZCT, OCB, OCR, GR"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2017_3_11.png"
+                  alt="GPT 결선: Y-△ 결선, 영상전압, 지락사고, 접지표시등, GR/SGR"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2017_2_06.png"
+                  alt="수전설비 단선결선도: PF, LA, COS, PT, CT, 표준심벌, 약호 명칭"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2016_1_14.png"
+                  alt="특고압 수전설비: 단선결선도, 계전기(27, 87), 과전류계전기 탭 설정, VCB 정격전압·용량"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2016_1_15.png"
+                  alt="GPT 결선도: 접지형 계기용 변압기, Open-Δ 결선, 영상전압 검출, 램프 점등 상태"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2016_2_09.png"
+                  alt="수전설비 단선결선도: LBS, 부하개폐기, 부하집계표, 입력환산, 발전기 용량, 서지흡수기"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2015_1_16.png"
+                  alt="특고압 수전설비 단선결선도: LBS, ATS, ALTS, 피뢰기 기능, 부하집계표, TR 용량 산정"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2014_2_17.png"
+                  alt="154kV 수전설비: 변압기 용량, DS 정격전압, CT 비율, SF₆ 가스, GCB·OCB·OCR, 차단용량"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2014_1_10.png"
+                  alt="특고압 수전설비: 변압기 용량, 수용률, 효율, 역률, VCB 전류, △-△/△-Y 결선"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2014_1_20.png"
+                  alt="특고압 수전설비 결선도: COS, AS, 단락전류, 차단용량, ACB 명칭, 결선도 작성"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2013_3_01.png"
+                  alt="특고압 수전설비 단선도: 유입차단기, 피뢰기, 전압계, 전류계, 지락보호계전기, CT/PT, ZCT, 전환개폐기"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2013_1_01.png"
+                  alt="특고압 수전설비, 계전기(27, 87), 과전류계전기, VCB 차단기, 정격용량"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2012_2_11.png"
+                  alt="GPT, 접지형 계기용 변압기, 지락계전기"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2011_2_03.png"
+                  alt="변전설비 (수용률, 부등률, 부하율) : 단선결선도, 부등률 적용, 최대합성전력, 수용률 의미, 차단기 종류"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_2_11.png"
+                  alt="154kV 수변전설비 : 변압기 용량 계산, 차단기 용량, 계전기 명칭 (87T, 51), 부등률, 수용률, 역률"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2010_2_06.png"
+                  alt="3상 3선식 수변전 결선도 : GPT (접지형 계기용 변압기), 비접지방식, CLR (전류제한 저항기), 계전기 번호 (67: 지락방향)"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2009_2_05.png"
+                  alt="특고압 수전설비 결선도	심벌, 약호, 역할"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2009_1_06.png"
+                  alt="간이 수전 결선도 : 특고압 수전설비, LA, DS 생략, 예비선, 케이블 종류, COS, PF"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2008_2_20.png"
+                  alt="3상 4선식, 특고압 수전설비, CB, PT, CT, MOF, COS"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2008_2_01.png"
+                  alt="특고압 수전설비, 표준결선도, CB, PT, CT, MOF, OCR, OCGR, 트립전원, LS"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2008_1_01.png"
+                  alt="특고압 간이 수전설비 표준결선도 : 22.9[kV-Y], LA용 DS 생략, 붙임형 LA, 지중 인입선 예비선 포함, CNCV-W, TR CNCV-W, COS, PF, 비대칭 차단전류 10[kA]"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2008_1_02.png"
+                  alt="지락계전기 (GPT) 시설 : GPT 동작 원리, 대지전압 변화, Open △ 결선, 경보벨 전압, 전압계 지시값"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2007_2_01.png"
+                  alt="154kV 수전설비, 단선도, 기기 심벌, 결선도"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2007_2_08.png"
+                  alt="특고압 수전설비, 표준심벌, 기능 설명, 기기 명칭"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2007_1_04.png"
+                  alt="특고압 수전설비 결선도: 154kV는 DC트립, 22.9kV 지중선은 CNCV-W, 2회선 인입, 66kV 이상 LS 사용"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2006_1_12.png"
+                  alt="특고압 수전설비 결선도 : 최대수요전력계, 무효전력계, 영상전압계, VCB 정격, MOF (계기용 변성기), 자동제어기기 번호 (27, 51, 59, 64 등)"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2006_1_08.png"
+                  alt="특고압 수전설비 단선결선도 : 변압기 용량 계산, 피뢰기, 계전기, 퓨즈, 변류기, 차단기, 정격전류 계산, 잔류전하 방전, 복선결선도"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2005_1_11.png"
+                  alt="154kV 수전설비, 변압기 용량, CT 비율, GCB, OA/FA, SF6, ULTC"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="..\images\2005_1_04.png"
+                  alt="22.9kV 간이 수전설비, 큐비클 구성, ASS, LA, MOF, COS, ACB, MCCB"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container2">
+        <textarea id="srcList" readonly></textarea>
+        <textarea id="srcListCode" readonly></textarea>
+        <div class="button-container">
+          <button onclick="copyToClipboard()">복사</button>
+          <button onclick="clearAll()">삭제</button>
+          <button onclick="inputNumbers()">숫자기입</button>
+          <button onclick="deleteInputNumbers()">기입숫자제거</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+        let combinedContent1 = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          if (image && contentTextarea) {
+            const src = image.getAttribute("src");
+            const text = contentTextarea.value.trim();
+
+            if (text !== "") {
+              combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+              combinedContent1 += `
+            <tr>
+              <td>
+                <img
+                              <tr>
+              <td>
+                <img
+                  src="${src}"
+                  alt="${text}"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>\n`;
+            }
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+        document.getElementById("srcListCode").value = combinedContent1;
+      }
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+
+      function inputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row, index) => {
+          const indexNumber = index + 1;
+          const textarea = row.querySelector("textarea.image-content");
+          if (textarea) {
+            textarea.value = indexNumber.toString();
+          }
+        });
+      }
+
+      // 이 함수는 텍스트 영역에 순서대로 기입된 숫자만 지우고, 다른 내용이 있으면 그대로 남깁니다.
+      // 그리고 그 결과에 맞춰 srcListCode를 업데이트합니다.
+      function deleteInputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+
+        allRows.forEach((row, index) => {
+          const textarea = row.querySelector("textarea.image-content");
+
+          if (textarea) {
+            const expectedNumber = (index + 1).toString();
+            const currentValue = textarea.value.trim();
+
+            if (currentValue === expectedNumber) {
+              textarea.value = "";
+            }
+          }
+        });
+
+        // 텍스트 영역 내용 변경 후 srcListCode를 다시 생성합니다.
+        updateSrcList();
+      }
+
+      // 페이지 로드 시 모든 textarea의 placeholder를 설정하는 함수
+      window.onload = function () {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+          const label = row.querySelector("label"); // Select the <label> element
+
+          if (image && contentTextarea && label) {
+            const altText = image.getAttribute("alt");
+            contentTextarea.setAttribute("placeholder", altText); // Set the placeholder
+            label.textContent = altText; // Set the label's text content
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
